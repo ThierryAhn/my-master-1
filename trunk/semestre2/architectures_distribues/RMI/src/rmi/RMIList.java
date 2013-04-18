@@ -25,7 +25,7 @@ public class RMIList extends NotificationBroadcasterSupport implements RMIListMB
 	 * @return true if the data is well added, false if not.
 	 */
 	public boolean add(String data) {
-		this.sendNotification(new Notification("Adding", data, System.currentTimeMillis()));
+		this.sendNotification(new Notification("Adding", data, System.currentTimeMillis(), "Adding of the value : "+data));
 		return list.add(data);
 	}
 
@@ -35,7 +35,7 @@ public class RMIList extends NotificationBroadcasterSupport implements RMIListMB
 	 * @return true if the data is well remove, false if not.
 	 */
 	public boolean remove(String data) {
-		this.sendNotification(new Notification("Removing", data, System.currentTimeMillis()));
+		this.sendNotification(new Notification("Removing", data, System.currentTimeMillis(), "Value : "+data +" deleted "));
 		return list.remove(data);
 	}
 	

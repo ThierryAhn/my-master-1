@@ -1,14 +1,20 @@
-package rmi_server;
+package rmi;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 
+import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
+import javax.management.JMX;
+import javax.management.MBeanRegistrationException;
 import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
+import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
 
-public class CityManagerServer {
+
+
+public class RMIHelloWorld {
 	static MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
 	
 	
@@ -16,8 +22,8 @@ public class CityManagerServer {
 		ObjectName reference = null;
 		
 		try {
-			reference = new ObjectName("CityManager:type=DynamicMBean, name=CityManager");
-		
+			reference = new ObjectName("RMIList:type=RMIListMBean, name=RMIList");
+			addObjectInMBeanServer(reference);
 		} catch (MalformedObjectNameException e) {
 			e.printStackTrace();
 		} catch (NullPointerException e) {
@@ -32,7 +38,7 @@ public class CityManagerServer {
 	 * @throws InstanceNotFoundException 
 	 */
 	public static void addObjectInMBeanServer(ObjectName reference) throws InstanceNotFoundException{
-		/*RMIList mbean = new RMIList();
+		RMIList mbean = new RMIList();
 		try {
 			mbs.registerMBean(mbean, reference);
 			mbs.addNotificationListener(reference, reference, null, null);
@@ -43,7 +49,7 @@ public class CityManagerServer {
 		} catch (NotCompliantMBeanException e) {
 			e.printStackTrace();
 		}
-		mbean.add("item0");*/
+		mbean.add("item0");
 	}
 	
 	/**
