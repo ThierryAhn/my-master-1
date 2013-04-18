@@ -1,22 +1,14 @@
-package rmi_server;
+package rmi;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 
-import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
-import javax.management.JMX;
-import javax.management.MBeanRegistrationException;
 import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
-import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
 
-import rmi.RMIList;
-import rmi.RMIListMBean;
-
-
-public class RMIHelloWorld {
+public class CityManagerServer {
 	static MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
 	
 	
@@ -24,7 +16,7 @@ public class RMIHelloWorld {
 		ObjectName reference = null;
 		
 		try {
-			reference = new ObjectName("RMIList:type=RMIListMBean, name=RMIList");
+			reference = new ObjectName("CityManager:type=CityManagerDMBean, name=CityManager");
 			addObjectInMBeanServer(reference);
 		} catch (MalformedObjectNameException e) {
 			e.printStackTrace();
@@ -39,19 +31,14 @@ public class RMIHelloWorld {
 	 * @param reference
 	 * @throws InstanceNotFoundException 
 	 */
-	public static void addObjectInMBeanServer(ObjectName reference) throws InstanceNotFoundException{
-		RMIList mbean = new RMIList();
+	private static void addObjectInMBeanServer(ObjectName reference){
+		CityManager cityManager = new CityManager();
 		try {
-			mbs.registerMBean(mbean, reference);
-			mbs.addNotificationListener(reference, reference, null, null);
-		} catch (InstanceAlreadyExistsException e) {
-			e.printStackTrace();
-		} catch (MBeanRegistrationException e) {
-			e.printStackTrace();
-		} catch (NotCompliantMBeanException e) {
+			mbs.registerMBean(cityManager,reference);
+			mbs.addNotificationListener(reference,reference,null, null);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		mbean.add("item0");
 	}
 	
 	/**
