@@ -1,9 +1,5 @@
 
-import java.io.IOException;
-
-import javax.management.InstanceNotFoundException;
 import javax.management.JMX;
-import javax.management.MBeanServer;
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 import javax.management.remote.JMXConnector;
