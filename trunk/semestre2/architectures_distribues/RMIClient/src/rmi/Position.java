@@ -1,4 +1,4 @@
-package citymanager;
+package rmi;
 
 import java.io.Serializable;
 

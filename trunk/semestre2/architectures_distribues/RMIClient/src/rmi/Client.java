@@ -1,3 +1,4 @@
+package rmi;
 
 import javax.management.JMX;
 import javax.management.MBeanServerConnection;
@@ -6,7 +7,6 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
-import rmi.RMIListMBean;
 
 public class Client {
 	
@@ -29,7 +29,6 @@ public class Client {
 	 */
 	public static void retrieveObjectFromBeanServer(MBeanServerConnection mbsc, ObjectName reference) throws Exception{
 		RMIListMBean mbean = JMX.newMBeanProxy(mbsc, reference, RMIListMBean.class);
-		mbsc.addNotificationListener(reference, reference, null, null);
 		mbean.add("item1");
 		System.out.println(mbean);
 	}
