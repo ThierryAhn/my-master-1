@@ -337,7 +337,7 @@ public class CityManager extends NotificationBroadcasterSupport implements Dynam
 
 	@Override
 	public AttributeList setAttributes(AttributeList attributes) {
-		// Check attributesto avoid NullPointerException later on
+		// Check attributes to avoid NullPointerException later on
 	    if (attributes == null) {
 	        throw new RuntimeOperationsException(new IllegalArgumentException("AttributeList attributes cannot be null"),
 	            "Cannot invoke a setter of " + this.getClass().getName());
