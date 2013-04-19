@@ -1,5 +1,8 @@
 package rmi;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.management.JMX;
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
@@ -77,6 +80,20 @@ public class CityManagerClient {
 		client.searchFor("Mogadiscio");
 		client.searchFor("Paris");
 		client.searchFor("Hyrule");
+		
+		// remove all cities
+		client.removeAllCities();
+		
+		// print all cities
+		client.getCities();
+		
+		// setCities
+		List<City> cities = new LinkedList<City>();
+		cities.add(new City("Rouen", 49.443889, 1.103333, "France"));
+		client.setCities(cities);
+		
+		// print all cities
+		client.getCities();
 		
 		// remove all cities
 		client.removeAllCities();
