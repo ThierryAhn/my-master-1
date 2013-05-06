@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bd xmlns="http://www.univ-rouen.fr/bd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.univ-rouen.fr/bd ../xsd/BD.xsd ">
+	<Informations>
+		<Serie>À bout portant</Serie>
+		<Titre>Premier sang</Titre>
+		<ISBN>2-84565-138-4</ISBN>
+		<Editeur>Soleil Productions</Editeur>
+		<Date>2002-01-19</Date>
+	</Informations>
+	
+	<Images>
+		<Image>http://www.bedetheque.com/media/Couvertures/aboutportantcouv01.jpg</Image>
+	</Images>
+	<Description> 
+		Dizzy Cordova a tout perdu: son mari et son fils, tous deux victimes de la 
+		brutalité des gangs. A peine sortie d'incarcération, la jeune femme est 
+		abordée par le mystérieux agent Graves. Ce dernier lui offre la liste des 
+		vrais coupables, une arme, cent cartouches, mais surtout, lui garantit 
+		l'immunité absolue. Dizzie empruntera-t-elle la voie de la rédemption, ou 
+		celle de la vengeance, au risque de souiller son âme à jamais ?
+	</Description>
+</bd>

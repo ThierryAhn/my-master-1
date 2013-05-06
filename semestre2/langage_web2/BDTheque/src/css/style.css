@@ -1,0 +1,13 @@
+/* image de la BD */
+#image img{
+	float : left;
+	height : 316px;
+	width : 230px;
+	margin-right : 10px;
+}
+
+/* description */
+#description{
+	width : 800px;
+	text-align : justify;
+}
