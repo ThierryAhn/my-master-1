@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.univ-rouen.fr/bd" xmlns:bd="http://www.univ-rouen.fr/bd" elementFormDefault="qualified">
+	<element name="bds">
+		<complexType>
+			<sequence>
+				<element maxOccurs="unbounded" name="bd">
+					<complexType>
+						<sequence>
+							<!-- Infos BD -->
+							<element name="Informations">
+								<complexType>
+									<sequence>
+										<!--  Serie BD -->
+										<element name="Serie" type="string" />
+										<!-- Titre BD -->
+										<element name="Titre" type="string" />
+										<!-- ISBN BD -->
+										<element name="ISBN" type="string" />
+										<!-- Editeur BD -->
+										<element name="Editeur" type="string" />
+										<!--  Date de creation BD -->
+										<element name="Date" type="date"/>
+									</sequence>
+								</complexType>
+							</element>
+							
+							<!--  Images BD, simple content, que juste l'url -->
+							<element name="Images">
+								<complexType>
+									<sequence>
+										<element maxOccurs="unbounded" name="Image">
+											<complexType>
+												<simpleContent>
+													<extension base="string"/>
+												</simpleContent>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							
+							<!--  Description BD -->
+							<element name="Description">
+								<complexType>
+									<simpleContent>
+										<extension base="string"/>
+									</simpleContent>
+								</complexType>
+							</element>
+							
+						</sequence>
+					</complexType>	
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	
+</schema>

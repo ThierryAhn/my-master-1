@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bds xmlns="http://www.univ-rouen.fr/bd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.univ-rouen.fr/bd ../xsd/BD.xsd ">
+	<!-- À bout portant : Premier sang -->
+	<bd>
+		<Informations>
+			<Serie>À bout portant</Serie>
+			<Titre>Premier sang</Titre>
+			<ISBN>2-84565-138-4</ISBN>
+			<Editeur>Editeur="Soleil Productions</Editeur>
+			<Date>2002-01-19</Date>
+		</Informations>
+		<Images>
+			<Image>http://www.bedetheque.com/thb_couv/aboutportantcouv01.jpg</Image>
+		</Images>
+		<Description> 
+			Dizzy Cordova a tout perdu: son mari et son fils, tous deux victimes de la 
+			brutalité des gangs. A peine sortie d'incarcération, la jeune femme est 
+			abordée par le mystérieux agent Graves. Ce dernier lui offre la liste des 
+			vrais coupables, une arme, cent cartouches, mais surtout, lui garantit 
+			l'immunité absolue. Dizzie empruntera-t-elle la voie de la rédemption, ou 
+			celle de la vengeance, au risque de souiller son âme à jamais ?
+		</Description>
+	</bd>
+	
+	<!-- À l'abri du volcan : Tome 1 -->
+	<bd>
+		<Informations>
+			<Serie>À l'abri du volcan</Serie>
+			<Titre>Tome 1</Titre>
+			<ISBN>978-2-87763-376-5</ISBN>
+			<Editeur>Orphie</Editeur>
+			<Date>2011-11-05</Date>
+		</Informations>
+		
+		<Images>
+			<Image>http://www.bedetheque.com/thb_couv/Couv_144796.jpg</Image>
+		</Images>
+		<Description> 
+			Sur l’île de la Réunion , Rosalie une jeune étudiante, se retrouve entraînée 
+			dans une aventure qui la conduira dans les entrailles du Volcan de la Fournaise.
+			Plongée dans un monde inconnu et étrange elle devra accomplir une mission pour 
+			sauver son île de la menace d’un Tsunami !
+		</Description>
+	</bd>
+	<!-- À l'abri du volcan : Tome 2 -->
+	<bd>
+		<Serie>À l'abri du volcan</Serie>
+		<Titre>Tome 2</Titre>
+		<ISBN>978-2-87763-453-3</ISBN>
+		<Editeur>Orphie</Editeur>
+		<Date>2011-11-05</Date>
+		<Images>
+			<Image>http://www.bedetheque.com/thb_couv/Couv_144798.jpg</Image>
+		</Images>
+		<Description> 
+			Rosalie et Londin ont échoué dans leur mission et sont désormais prisonniers des 
+			créatures de pierres. Rien ne peut plus empêcher le Tsunami de s’abattre sur les 
+			côtes de la Réunion.
+			De son coté Miria complote contre la reine d’Escarone et rassemble ses troupes 
+			afin d’envahir l’île.
+		</Description>
+	</bd>
+</bds>
