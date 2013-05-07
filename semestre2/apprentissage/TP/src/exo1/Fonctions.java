@@ -1,8 +1,11 @@
 package exo1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import utils.LabelledData;
 
@@ -47,18 +50,25 @@ public class Fonctions {
 	
 	/**
 	 * Retourne les k-plus-proches voisins.
+	 * @param list list des glyphes.
 	 * @param glyph glyphe a considerer.
 	 * @param k le nombre de voisins a considerer.
 	 * @return les k-plus-proches voisins.
 	 */
-	public static Map nearestNeighbor(byte[] glyph, int k){
-		Map<Float, LabelledData> sortedMap = new SortedMap<Float, LabelledData>();
+	public static Map nearestNeighbor(List<LabelledData> list, byte[] glyph, int k){
+		SortedMap<Float, LabelledData> sortedMap = new TreeMap<Float, LabelledData>();
 		
-		for(int i = 0; i < k; i++){
-			//array.add(new LabelledData())
+		// recuperation des k premiers elements de la liste
+		for(int i = 0; i < list.size(); i++){
+			LabelledData labelledData = list.get(i);
+			double dist = distance(labelledData.getGlyph(), glyph);
+			sortedMap.put((float)dist, labelledData);
 		}
 		
-		return array;
+		for(int i = k; i < sortedMap.size(); i++){
+			//sortedMap.remove(key)
+		}
+		return sortedMap;
 	}
 	
 }

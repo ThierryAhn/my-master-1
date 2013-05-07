@@ -3,6 +3,7 @@ package utils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import exo1.Fonctions;
 
@@ -26,6 +27,10 @@ public class TestGlyph {
 		// test listGlyph
 		List<LabelledData> l = Fonctions.makeSet(dataset, 2, 1);
 		System.out.println(l.size());
+		
+		// 5 plus proches voisins
+		Map sortedMap = Fonctions.nearestNeighbor(l, dataset.get(1).get(0), 5);
+		System.out.println(sortedMap);
 		
 	}
 	

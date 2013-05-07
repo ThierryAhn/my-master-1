@@ -5,6 +5,6 @@ public class LabelledData {
 	private byte[] glyph;
 	
 	public LabelledData(int cls, byte[] glyph) { this.cls=cls; this.glyph = glyph; }
-	int getCls() { return cls; }
-	byte[] getGlyph() {return glyph; }
+	public int getCls() { return cls; }
+	public byte[] getGlyph() {return glyph; }
 }
