@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE category SYSTEM "config.dtd">
+
+<category name="home">
+    <info name="hardware description">
+        <infoline title="hardware" desc="SysLink router" />
+        <infoline title="type" desc="network router" />
+        <infoline title="version" desc="2.01b" />
+    </info>
+    <category name="Edit settings">
+        <category name="lan">
+            <module name="Ethernet 1">
+                <checkfield name="enabled" settingkey="lan.eth1.enabled" />
+                <checkfield name="negotiation" settingkey="lan.eth1.negociation" />
+                <textfield name="mac adresse" settingkey="lan.eth1.mac" />
+            </module>
+            <module name="Ethernet 2">
+                <checkfield name="enabled" settingkey="lan.eth2.enabled" />
+                <checkfield name="negotiation" settingkey="lan.eth2.negociation" />
+                <textfield name="mac adresse" settingkey="lan.eth2.mac" />
+            </module>
+            <module name="Ethernet 3">
+                <checkfield name="enabled" settingkey="lan.eth3.enabled" />
+                <checkfield name="negotiation" settingkey="lan.eth3.negociation" />
+                <textfield name="mac adresse" settingkey="lan.eth3.mac" />
+            </module>
+            <module name="Ethernet 4">
+                <checkfield name="enabled" settingkey="lan.eth4.enabled" />
+                <checkfield name="negotiation" settingkey="lan.eth4.negociation" />
+                <textfield name="mac adresse" settingkey="lan.eth4.mac" />
+            </module>
+			
+            <info name="help">
+                <infoline title="Settings" desc="This menu can be used to edit the ethernet configuration of the router." />
+            </info>
+        </category>
+
+        <category name="wifi">
+            <module name="Antenna">
+                <checkfield name="right enabled" settingkey="wifi.rant.enabled" />
+                <checkfield name="left enabled" settingkey="wifi.lant.enabled" />
+                <choicefield name="channel" settingkey="wifi.channel">
+                    <choicevalue name="1 - 2412 Mhz" value="1" />
+                    <choicevalue name="2 - 2417 Mhz" value="2" />
+                    <choicevalue name="3 - 2422 Mhz" value="3" />
+                    <choicevalue name="4 - 2427 Mhz" value="4" />
+                </choicefield>
+            </module>
+
+            <module name="Access Point">
+                <choicefield name="type" settingkey="accesspoint.type">
+                    <choicevalue name="Infrastructure" value="1" />
+                    <choicevalue name="adhoc" value="2" />
+                </choicefield>
+                <checkfield name="routing" settingkey="accesspoint.routing.enabled" />
+                <textfield name="left enabled" settingkey="accesspoint.gateway" />
+                <textfield name="SSID" settingkey="wifi.ssid" />
+            </module>
+			
+            <info name="help">
+                <infoline title="Settings" desc="This menu can be used to edit the internal wireless settings of the router." />
+            </info>
+        </category>
+
+        <info name="help">
+            <infoline title="Settings" desc="This menu can be used to edit the internal settings of the router." />
+        </info>
+    </category>
+</category>
+

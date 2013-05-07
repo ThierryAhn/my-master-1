@@ -1,0 +1,45 @@
+
+
+div.leftmenu {
+	background-color: lightgray;
+	width: 150px;
+	height: 500px;
+	float:left;
+}
+
+div.maincontent {
+	background-color: cyan;
+	margin-left:170px;
+}
+
+.title {
+	background-color: darkgray;
+	color:white;
+	text-align:center;
+	border-style:solid;
+	border-color:gray;
+	display:block;
+}
+
+.content {
+	padding: 5px;
+}
+
+.info table { width: 100%; }
+.info td {
+	border: 1px solid black;
+}
+
+div.appname img {
+	margin: 5px;
+}
+
+div.appname {
+	font-family:"Verdana", Times, serif;
+	font-size:50px;
+	background-color: darkgray;
+}
+
+div.footer {
+	clear:both;
+}
