@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import exo1.Fonctions;
 
@@ -29,7 +30,8 @@ public class TestGlyph {
 		System.out.println(l.size());
 		
 		// 5 plus proches voisins
-		Map sortedMap = Fonctions.nearestNeighbor(l, dataset.get(1).get(0), 5);
+		Map sortedMap = new TreeMap<Float, LabelledData>();
+		sortedMap = Fonctions.nearestNeighbor(l, dataset.get(1).get(0), 5);
 		System.out.println(sortedMap);
 		
 	}
