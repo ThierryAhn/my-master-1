@@ -1,0 +1,30 @@
+<!ELEMENT category ((info|category|module)+)>
+  <!ATTLIST category name CDATA #REQUIRED>
+
+<!ELEMENT info (infoline+)>
+  <!ATTLIST info name CDATA #REQUIRED>
+
+<!ELEMENT infoline (EMPTY)>
+  <!ATTLIST infoline title CDATA #REQUIRED>
+  <!ATTLIST infoline desc CDATA #REQUIRED>
+
+<!ELEMENT module ((checkfield|textfield|choicefield)+)>
+  <!ATTLIST module name CDATA #REQUIRED>
+
+<!ELEMENT checkfield (EMPTY)>
+  <!ATTLIST checkfield name CDATA #REQUIRED>
+  <!ATTLIST checkfield settingkey CDATA #REQUIRED>
+
+<!ELEMENT textfield (EMPTY)>
+  <!ATTLIST textfield name CDATA #REQUIRED>
+  <!ATTLIST textfield settingkey CDATA #REQUIRED>
+
+<!ELEMENT choicefield (choicevalue+)>
+  <!ATTLIST choicefield name CDATA #REQUIRED>
+  <!ATTLIST choicefield settingkey CDATA #REQUIRED>
+
+<!ELEMENT choicevalue (EMPTY)>
+  <!ATTLIST choicevalue name CDATA #REQUIRED>
+  <!ATTLIST choicevalue value CDATA #REQUIRED>
+
+
