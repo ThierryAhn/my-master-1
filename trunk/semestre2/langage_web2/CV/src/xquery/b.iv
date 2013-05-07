@@ -1,0 +1,2 @@
+declare namespace cv="http://www.univ-rouen.fr/cv";
+collection("cv-base")/cv:cv/cv:Formations

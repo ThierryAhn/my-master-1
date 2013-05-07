@@ -1,0 +1,5 @@
+declare namespace cv="http://www.univ-rouen.fr/cv";
+<result>{
+for $c in collection("cv-base")/cv:cv
+return <candidat> {string-join(($c/cv:Civilite/cv:Prenom/text(),$c/cv:Civilite/cv:Nom/text()), ' ')} - {$c/cv:Titre/text()}</candidat> 
+}</result>

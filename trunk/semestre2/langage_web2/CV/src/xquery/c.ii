@@ -1,0 +1,7 @@
+declare namespace cv="http://www.univ-rouen.fr/cv";
+for $c in collection("cv-base")/cv:cv
+let $result := fn:concat(fn:concat($c/cv:Civilite/cv:Prenom/text(), " "),fn:concat($c/cv:Civilite/cv:Nom/text(), " - ", $c/cv:Titre/text()))
+return 
+<result>
+  {$result}
+</result>

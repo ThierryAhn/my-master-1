@@ -1,0 +1,18 @@
+declare namespace cv="http://univ-rouen.fr/cv";
+declare namespace xsl="http://www.w3.org/1999/XSL/Transform";
+declare function local:filter($p as xs:string){
+for $c in collection("cv-base")/cv:cv
+let $search := lower-case($c)
+where contains($search, lower-case($p))
+return
+<html>
+    <body>  
+        <h1>TP4 : Transformation XSL avec XQuery</h1>
+       { let $xsl := collection("cv-base")/xsl:stylesheet
+        return <div>{transform:transform($c,$xsl,())}</div>
+}  
+    </body>  
+</html>
+};
+
+local:filter('Java')

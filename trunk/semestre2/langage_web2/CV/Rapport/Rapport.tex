@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{url}
+\author{AHOUNOU Folabi Thierry}
+\title{XSD : création et validation de CV}
+\date{14/03/2013}
+\begin{document}
+	\maketitle	
+	
+	\newpage 	
+	
+	\section{Objectif}
+	Le but de ce TP est de concevoir un schéma de définition d'un document XML(XML Schema Definition) permettant de décrire et de valider 		un CV. Le fichier XSD produit à l'issu du TP sera par la suite utilisé pour décrire et valider le fichier XML décrivant notre CV.
+	
+	\section{Analyse}
+	Pour réaliser le travail demandé j'ai découpé un CV en 6 grandes parties à savoir : 
+	\begin{itemize}
+		\item Un titre.
+		\item La civilité.
+		\item La liste des formations.
+		\item La liste des expériences.
+		\item La liste des compétences.
+		\item Et pour finir la liste des loisirs.
+	\end{itemize}
+	
+	\section{Réalisation}
+	\subsection{Le Titre du CV}
+	Ici rien de particulier. Le titre du CV est basé sur une simple chaine de caractère.
+	
+	\subsection{La civilité}
+	La civilité est composé des champs nom, prénom, âge, adresse, téléphone, email et image. Les champs noms et prénom sont des simples
+	chaines de caractère. \\
+	Le nom doit être en majuscule. L'expression régulière utilisée est la suivante : $ \textbf{[A-Z \-]*} $.\\
+	Concernant l'âge une restriction a été également établie. En effet la valeur de l'âge doit être positive et comprise entre 16 et 75. 
+	Le téléphone doit être composé de 10 chiffres séparés deux à deux par un tiret(\textbf{-});
+	La restriction sur l'email a été quant à lui un plus compliqué à réaliser. J'ai finalement utilisé une expression régulière trouvée
+	sur ce site : \url{http://regexlib.com}. L'expression régulière permet de matcher les chaines suivantes : foo@bar.com | 					foobar@foobar.com.au \\
+	Je n'ai utilisé aucune restriction pour l'image.
+	
+	\subsection{La liste des formations}
+	Le terme "liste des formations" résume tout ce qu'il y a à dire dans cette partie. En effet on a une formation qui est composé de
+	plusieurs formations. Le format utilisé est le suivant : \\
+	$
+	<Formations>\\
+		<Formation>...</Formation>\\
+		<Formation>...</Formation>\\
+	</Formations>
+	$\\
+	Une formation(sans s) a un attribut \textbf{id} qui est de type int, un attribut \textbf{ecole} de type string et un attribut
+	\textbf{titre} pour le titre de la formation qui est de type string. La formation est aussi composée d'une date, d'une description,
+	la ville où la formation a été faite et le pays.
+	
+	\subsection{La liste des expériences}	
+	Voir partie ci dessus(La liste des formations). La réalisation est exactement la même.
+	
+	\subsection{La liste des compétences}
+	La réalisation est semblable à la partie liste des formations et liste des expériences. La seule différence ici est qu'on peut 
+	distinguer les compétences. Par exemple les compétences dans langages de programmation, les compétences dans dans les logiciels de
+	bureautique. Pour faire ça j'ai juste ajouté un attribut à l'élément $ <Competences> $. L'élément $ <Competence> $ incluse dans 
+	$ <Competences> $ ne possède qu'un seul attribut.
+	
+	\subsection{La liste des loisirs}
+	La liste des loisirs est pareil comme la liste des compétences.
+\end{document}

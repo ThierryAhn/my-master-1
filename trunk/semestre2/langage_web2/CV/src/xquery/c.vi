@@ -1,0 +1,10 @@
+declare namespace cv="http://www.univ-rouen.fr/cv";
+declare function local:competenceContains($p as xs:string){
+for $c in collection("cv-base")/cv:cv
+where contains($c/cv:Competences/cv:Competence/@titre,$p)
+return <candidat> {string-join(($c/cv:Civilite/cv:Prenom/text(),$c/cv:Civilite/cv:Nom/text()), ' ')} - {$c/cv:Titre/text()}</candidat>
+};
+
+<result ageMoyen ="{avg(collection("cv-base")/cv:cv/cv:Civilite/cv:Age/text())}" nbCandidat="{count(collection("cv-base")/cv:cv)}">{
+local:competenceContains('Java')
+}</result>
