@@ -65,9 +65,11 @@ public class Fonctions {
 			sortedMap.put((float)dist, labelledData);
 		}
 		
-		for(int i = k; i < sortedMap.size(); i++){
-			//sortedMap.remove(key)
+		// on garde que les k premiers elements de la liste
+		for(int i = 0; i < list.size() - k; i++){
+			sortedMap.remove(sortedMap.lastKey());
 		}
+		
 		return sortedMap;
 	}
 	
