@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv xmlns="http://www.univ-rouen.fr/cv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.univ-rouen.fr/cv xsd/cv.xsd ">
+	 
+	<Titre> Développeur Web</Titre>
+	
+	<Civilite>
+		<Nom>AHOUNOU</Nom>
+		<Prenom>Thierry</Prenom>
+		<Age>23</Age>
+		<Adresse>
+			<NumeroRue>312</NumeroRue>
+			<NomRue>Panorama Boulevard Siegfried</NomRue>
+			<CodePostal>76000</CodePostal>
+			<Ville>Mont Saint Aignan</Ville>
+		</Adresse>
+		<Telephone>06-18-61-05-03</Telephone>
+		<Email>a_thierry@ymail.com</Email>
+		<Image>image.jpg</Image>
+	</Civilite>
+	
+	<Formations>
+		<Formation id="1" ecole="Fac de sciences" titre="Master 1 Informatique">
+			<Date>2012-2013</Date>
+			<Description>Description Master 1 Informatique Rouen</Description>
+			<Location>Rouen</Location>
+			<Pays>France</Pays>
+		</Formation>
+		
+		<Formation id="2" ecole="Fac de sciences" titre="Master 1 Informatique">
+			<Date>2011-2012</Date>
+			<Description>Description Master 1 Informatique</Description>
+			<Location>Nantes</Location>
+			<Pays>France</Pays>
+		</Formation>
+		
+		<Formation id="3" ecole="Fac de sciences" titre="Licence 3 Informatique">
+			<Date>2010-2011</Date>
+			<Description>Description Licence 3 Informatique</Description>
+			<Location>Le Havre</Location>
+			<Pays>France</Pays>
+		</Formation>
+		
+		<Formation id="4" ecole="IUT Le Havre" titre="DUT Informatique">
+			<Date>2008-2010</Date>
+			<Description>Description DUT Informatique</Description>
+			<Location>Le Havre</Location>
+			<Pays>France</Pays>
+		</Formation>
+		
+		<Formation id="5" ecole="Porte de Normandie" titre="BAC Scientifique">
+			<Date>2007-2008</Date>
+			<Description>Description BAC Scientifique</Description>
+			<Location>Verneuil/Avre</Location>
+			<Pays>France</Pays>
+		</Formation>
+	</Formations>
+	
+	<Experiences>
+		<Experience id="1" titre="Experience 1">
+			<Date>2012-2013</Date>
+			<Description>Description Experience 1</Description>
+			<Location>Rouen</Location>
+			<Pays>France</Pays>
+		</Experience>
+		
+		<Experience id="2" titre="Experience 2">
+			<Date>2011-2012</Date>
+			<Description>Description Experience 2</Description>
+			<Location>Nantes</Location>
+			<Pays>France</Pays>
+		</Experience>
+	</Experiences>
+	
+	<Competences titre="Langage de Programmation">
+		<Competence titre="Java"> 4 ans de formation en Java</Competence>
+		<Competence titre="C++"> 2 ans de formation en C++</Competence>
+	</Competences>
+	
+	<Competences titre="Logiciels de Bureautique">
+		<Competence titre="Microsoft office "> Utilisation régulière</Competence>
+		<Competence titre="OpenOffice"> Utilisation régulière</Competence>
+	</Competences>
+	
+	<Loisirs>
+		<Loisir titre="Football"> Pratique régulière, tous les week-ends</Loisir>
+		<Loisir titre="Musculation"> SUAPS Rouen</Loisir>
+		<Loisir titre="Boxe"> SUAPS Rouen</Loisir>
+	</Loisirs>
+	
+</cv>
