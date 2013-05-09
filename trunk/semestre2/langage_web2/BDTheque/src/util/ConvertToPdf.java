@@ -21,6 +21,11 @@ import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 
+/**
+ * Classe ConvertToPdf qui transforme notre xsl-fo en pdf.
+ * @author AHOUNOU Folabi Thierry & ABALINE Rachid
+ *
+ */
 public class ConvertToPdf {
 
 	/**
@@ -84,9 +89,16 @@ public class ConvertToPdf {
 		return null;
 	}
 	
+	/**
+	 * Main
+	 * @param args
+	 * @throws FOPException
+	 * @throws IOException
+	 * @throws TransformerException
+	 */
 	public static void main(String [] args) throws FOPException, IOException, 
 					TransformerException{
-		new ConvertToPdf("src/model/BD-FO.xsl", "src/data/BD1.xml", "BD1.pdf");
+		new ConvertToPdf("src/model/BD-FO.xsl", "src/data/BD1.xml", "BD.pdf");
 	}
 
 }
