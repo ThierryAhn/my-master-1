@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -104,7 +103,7 @@
 										</tr>
 										
 										<tr>
-											<td>Date :</td>
+											<td>Crée le :</td>
 											<td><c:out value="${bd.informations.date}" /></td>
 										</tr>
 									</table>
@@ -119,70 +118,6 @@
 							</div>
 							<!-- /.post -->
 						</c:forEach>
-						
-						
-						<div
-							class="post-17396 post type-post status-publish format-standard hentry">
-							<a title="Millenium" href="#"><img src="img/Millenium.JPG"
-								alt="Millenium" class="woo-image thumbnail alignright"
-								width="300" height="200" /> </a>
-							<h2 class="title">
-								<a href="#" rel="bookmark" title="Scan One Piece 708">Millenium</a>
-							</h2>
-							<div class="post-meta"></div>
-							<div class="entry">
-								<p>
-								<table>
-									<tr>
-										<td>Scénariste :</td>
-										<td>Runberg (Sylvain)/Larsson (Stieg)</td>
-									</tr>
-									<tr>
-										<td>Dessinateur :</td>
-										<td>Homs (José)</td>
-									</tr>
-									<tr>
-										<td>Editeur :</td>
-										<td>Dupuis (Web)</td>
-									</tr>
-									<tr>
-										<td>Collection :</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>Genre / Public :</td>
-										<td>Policier/Thriller / Ados - Adultes</td>
-									</tr>
-									<tr>
-										<td>Type d'oeuvre :</td>
-										<td>BD</td>
-									</tr>
-									<tr>
-										<td>Nb. tomes parus :</td>
-										<td>1</td>
-									</tr>
-									<tr>
-										<td>Histoire terminée ?</td>
-										<td>Série en cours</td>
-									</tr>
-									<tr>
-										<td>Date de parution :</td>
-										<td>22 Mars 2013</td>
-									</tr>
-									<tr>
-										<td>Postée par :</td>
-										<td>Ro le 18/03/2013</td>
-									</tr>
-								</table>
-								</p>
-							</div>
-							<div class="fix"></div>
-							<span class="fbreplace"> </span>
-	
-							<div class="post-more">Adaptation de Millénium, la trilogie
-								de romans policiers de l'écrivain suédois Stieg Larsson.</div>
-						</div>
-						
 						
 						<div class="pagination woo-pagination">
 							<span class='page-numbers current'>1</span> <a
