@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.xmldb.api.base.XMLDBException;
+
 import model.DataBinding;
+import model.Xquery;
 
 import util.Bds;
 
@@ -30,9 +33,15 @@ public class Index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Bds bds = null;
 		
-		File file = new File("C:/Users/Folabi/workspace/BDTheque/src/data/BD.xml");
-		Bds bds = DataBinding.deserialise(file);
+		Xquery xquery = new Xquery();
+		
+		bds = DataBinding.deserialise(xquery.getXMLResource());
+		
+		
+		//File file = new File("C:/Users/Folabi/workspace/BDTheque/src/data/BD.xml");
+		
 		
 		// injection des bean
 		request.setAttribute("bds", bds);

@@ -1,6 +1,6 @@
 <div id="navigation" class="col-full">
 	<ul id="main-nav" class="nav fl">
-		<li><a href="index.jsp">Accueil</a></li>
+		<li><a href="Index">Accueil</a></li>
 		
 		<li>
 			<a href="#" data-reveal-id="myModal" data-animation="fadeAndPop" data-animationspeed="300" 
