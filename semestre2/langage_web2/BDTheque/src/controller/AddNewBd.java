@@ -1,10 +1,27 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import model.DataBinding;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import util.Bds;
+
+import java.sql.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Servlet implementation class AddNewBd
@@ -30,9 +47,71 @@ public class AddNewBd extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// recuperation des donnees entrees
 		String titre = request.getParameter("titreBd");
-		request.setAttribute("titre", titre);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		String serie = request.getParameter("serieBd");
+		String scenario = request.getParameter("scenarioBd");
+		String dessin = request.getParameter("dessinBd");
+		String couleurs = request.getParameter("couleursBd");
+		String editeur = request.getParameter("editeurBd");
+		String format = request.getParameter("formatBd");
+		String isbn = request.getParameter("isbnBd");
+		String image = request.getParameter("imageBd");
+		String description = request.getParameter("descriptionBd");
+		
+		// date courante
+        GregorianCalendar gcal = new GregorianCalendar();
+        XMLGregorianCalendar xgcal = null;
+		try {
+			xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+		} catch (DatatypeConfigurationException e) {
+			e.printStackTrace();
+		}
+        
+        // creation du bean
+        Bds bds = new Bds();
+        Bds.Bd bd = new Bds.Bd();
+        
+        // infos bd
+        Bds.Bd.Informations informations = new Bds.Bd.Informations();
+        informations.setTitre(titre);
+        informations.setSerie(serie);
+        informations.setIdentifiant(bds.getBd().size() + 1);
+        informations.setScenario(scenario);
+        informations.setDessin(dessin);
+        informations.setCouleurs(couleurs);
+        informations.setEditeur(editeur);
+        informations.setFormat(format);
+        informations.setISBN(isbn);
+        informations.setDate(xgcal);
+        bd.setInformations(informations);
+        
+        // image bd
+        Bds.Bd.Image imageBd = new Bds.Bd.Image();
+        imageBd.setValue(image);
+        bd.setImage(imageBd);
+        
+        // description bd
+        Bds.Bd.Description descriptionBd = new Bds.Bd.Description();
+        descriptionBd.setValue(description);
+        bd.setDescription(descriptionBd);
+        
+        // ajout de la bd dans la liste des bds
+        bds.getBd().add(bd);
+        
+        
+        /* File file = new File("xmldb:exist://localhost:8080/exist/xmlrpc/db/bedeTheque/BD.xml");
+        Bds bds = DataBinding.deserialise(file);
+        
+        
+        // injection des bean
+     	request.setAttribute("bds", bds);
+     		
+     	//recuperation du dispatcher
+     	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
+     		
+     	//envoie a la jsp
+     	dispatcher.include(request, response);*/
 	}
 
 }

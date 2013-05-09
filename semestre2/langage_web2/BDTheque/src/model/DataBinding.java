@@ -6,17 +6,22 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+
+import org.xmldb.api.base.XMLDBException;
+import org.xmldb.api.modules.XMLResource;
+
 import util.Bds;
+import util.ObjectFactory;
 
 public class DataBinding {
 
 	/**
-	 * Retourne une instance de bds deserialisée depuis le fichier xml 
-	 * @param file
+	 * Retourne une instance de bds deserialisée depuis la ressource xml.
+	 * @param res
 	 * @return
+	 * @throws XMLDBException
 	 */
-	@SuppressWarnings("rawtypes")
-	public static Bds deserialise(File file){
+	public static Bds deserialise(XMLResource res) throws XMLDBException{
 		JAXBContext context = null;
 		Unmarshaller um;
 		
@@ -24,7 +29,10 @@ public class DataBinding {
 			context = JAXBContext.newInstance("util");
 			um = context.createUnmarshaller();
 			
-			Bds bds = (Bds)um.unmarshal(file);
+			ObjectFactory factory = new ObjectFactory();
+			Bds bds = factory.createBds();
+			
+			bds = (Bds)um.unmarshal(res.getContentAsDOM());
 			return bds;
 		} catch (JAXBException e) {
 			e.printStackTrace();
@@ -45,6 +53,6 @@ public class DataBinding {
 			m.marshal(bds, new File("src/data/BDcreated.xml"));
 			} catch (JAXBException ex) {
 			ex.printStackTrace();
-			}
+		}
 	}
 }
