@@ -1,19 +1,13 @@
 package controller;
 
-import java.io.File;
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.xmldb.api.base.XMLDBException;
-
 import model.DataBinding;
 import model.Xquery;
-
 import util.Bds;
 
 /**
@@ -34,15 +28,12 @@ public class Index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Bds bds = null;
-		
-		Xquery xquery = new Xquery();
-		
-		bds = DataBinding.deserialise(xquery.getXMLResource());
-		
-		
-		//File file = new File("C:/Users/Folabi/workspace/BDTheque/src/data/BD.xml");
-		
-		
+		try {
+			Xquery xquery = new Xquery();
+			bds = DataBinding.deserialise(xquery.getXMLResource());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		// injection des bean
 		request.setAttribute("bds", bds);
 		
