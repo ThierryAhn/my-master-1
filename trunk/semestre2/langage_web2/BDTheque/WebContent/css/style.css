@@ -1167,11 +1167,10 @@ h6 {
 }
 
 #search {
-    position: absolute;
-    top: 0px;
-    right: 215px;
-    height: 150px;
-    line-height: 305px;
+	float: right;
+    margin:-4px 5px 5px 5px;
+    padding: 0;
+    height: 0px;
 }
 
 .nav li a:hover, .nav li.current_page_item a, .nav li.current_page_parent a, 
