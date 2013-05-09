@@ -2,12 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<html lang="fr-FR">
+<html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 		<script type='text/javascript' src='js/jquery/jquery.js'></script>
 		<script type='text/javascript' src='js/general.js'></script>
-		<title>Bdtèque</title>
+		<title>Bdthèque</title>
 		<link rel="shortcut icon" href="img/icon.jpg" />
 	
 		<!-- fenetre modale css -->
