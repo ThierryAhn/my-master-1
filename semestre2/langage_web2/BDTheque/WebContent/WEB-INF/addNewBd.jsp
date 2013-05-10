@@ -33,7 +33,7 @@
 			<option value="moyenFormat">Moyen Format</option>
 			<option value="grandFormat">Grand Format</option>
 		</select>
-		<br/>
+		<br/> <br/>
 		
 		<label for="isbnBd">ISBN </label>
 		<input type="text" id="isbnBd" name="isbnBd" value="" size="30" maxlength="30" required/>
