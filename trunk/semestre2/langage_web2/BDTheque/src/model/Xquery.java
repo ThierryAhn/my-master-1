@@ -17,7 +17,7 @@ public class Xquery {
 	/**
 	 * URI de la ressource.
 	 */
-	private static String URI = "xmldb:exist://localhost:8081/exist/xmlrpc/db/bedetheque";
+	private static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/bedetheque";
 	/**
 	 * Ressource XML.
 	 */
