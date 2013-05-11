@@ -111,6 +111,7 @@ public class AddNewBd extends HttpServlet {
         // execution de l'insert
         try {
 			xquery.insert(bd);
+			xquery = new Xquery();
 			bds = DataBinding.deserialise(xquery.getXMLResource());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
