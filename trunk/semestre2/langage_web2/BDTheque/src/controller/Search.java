@@ -1,13 +1,14 @@
 package controller;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import model.DataBinding;
 import model.Xquery;
 import util.Bds;
@@ -26,18 +27,18 @@ public class Search extends HttpServlet {
      */
     public Search() {
         super();
-		try {
-			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getXMLResource());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			xquery = new Xquery();
+			bds = DataBinding.deserialise(xquery.getXMLResource());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		//recuperation du dispatcher
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/search.jsp");
 		//envoie a la jsp
@@ -49,12 +50,29 @@ public class Search extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Bds resultat = new Bds();
+		Method[] allmethode = Bd.Informations.class.getDeclaredMethods();
 		for(Bd bd : bds.getBd()){
-			if(bd.getInformations().getTitre().toLowerCase().contains(
-					request.getParameter("titreBd").toLowerCase())){
+			boolean searched = true;
+			for(String param: request.getParameterMap().keySet()){
+				for (Method m : allmethode) {
+					if(m.getName().equals("get"+param)){
+						String val = null;
+						try {
+							val = (String) m.invoke(bd.getInformations(), (Object[])m.getParameterTypes());
+						} catch (Exception e) {
+							e.printStackTrace();
+						} 
+						if(!val.toLowerCase().contains(request.getParameter(param).toLowerCase()) && !request.getParameter(param).equals(null)){
+								searched=false;
+						}
+					}
+				}
+			}
+			if (searched){
 				resultat.getBd().add(bd);
 			}
-		}
+		}	
+		
 		// injection des bean
 		request.setAttribute("resultat", resultat);
 		
