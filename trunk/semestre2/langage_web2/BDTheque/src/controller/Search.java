@@ -1,37 +1,68 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.DataBinding;
+import model.Xquery;
+import util.Bds;
+import util.Bds.Bd;
 
 /**
  * Servlet implementation class Search
  */
 public class Search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private Bds bds = null;
+	private Xquery xquery;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Search() {
         super();
-        // TODO Auto-generated constructor stub
+		try {
+			xquery = new Xquery();
+			bds = DataBinding.deserialise(xquery.getXMLResource());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		//recuperation du dispatcher
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/search.jsp");
+		//envoie a la jsp
+		dispatcher.include(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		Bds resultat = new Bds();
+		for(Bd bd : bds.getBd()){
+			if(bd.getInformations().getTitre().toLowerCase().contains(
+					request.getParameter("titreBd").toLowerCase())){
+				resultat.getBd().add(bd);
+			}
+		}
+		// injection des bean
+		request.setAttribute("resultat", resultat);
+		
+		//recuperation du dispatcher
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/resultSearch.jsp");
+		
+		//envoie a la jsp
+		dispatcher.include(request, response);
 	}
 
 }
