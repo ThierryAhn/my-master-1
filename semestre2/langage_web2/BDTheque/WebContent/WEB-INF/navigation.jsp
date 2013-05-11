@@ -9,7 +9,7 @@
 			</a>
 		</li>
 		
-		<li><a href="#">Modifier Bd</a></li>
+		<li><a href="Search">Recherche avancée</a></li>
 		
 		<li><a href="#">Supprimer Bd</a></li>
 	</ul>
