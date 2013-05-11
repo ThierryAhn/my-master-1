@@ -22,12 +22,12 @@ public class Search extends HttpServlet {
 	private Bds bds = null;
 	private Xquery xquery;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Search() {
-        super();
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Search() {
+		super();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -62,9 +62,10 @@ public class Search extends HttpServlet {
 						} catch (Exception e) {
 							e.printStackTrace();
 						} 
-						if(!val.toLowerCase().contains(request.getParameter(param).toLowerCase()) && !request.getParameter(param).equals(null)){
+						for(String s:request.getParameterMap().get(param))
+							if(!val.toLowerCase().contains(s.toLowerCase()) && !request.getParameter(param).equals(null)){
 								searched=false;
-						}
+							}
 					}
 				}
 			}
@@ -72,13 +73,13 @@ public class Search extends HttpServlet {
 				resultat.getBd().add(bd);
 			}
 		}	
-		
+
 		// injection des bean
 		request.setAttribute("resultat", resultat);
-		
+
 		//recuperation du dispatcher
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/resultSearch.jsp");
-		
+
 		//envoie a la jsp
 		dispatcher.include(request, response);
 	}
