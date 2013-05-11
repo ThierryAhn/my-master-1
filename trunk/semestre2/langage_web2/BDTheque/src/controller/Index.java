@@ -29,8 +29,6 @@ public class Index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 			IOException {
 		
-		System.out.println("get " +request.getParameter("Identifiant"));
-		
 		Bds bds = null;
 		try {
 			Xquery xquery = new Xquery();
