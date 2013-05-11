@@ -1,4 +1,4 @@
-<div id="myModal" class="reveal-modal">
+<div id="addModal" class="reveal-modal">
 	<h1>Ajouter une nouvelle BD</h1>
 	
 	<form method="post" action="AddNewBd">

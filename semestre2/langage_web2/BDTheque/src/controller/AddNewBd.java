@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -16,14 +15,8 @@ import model.DataBinding;
 import model.Xquery;
 
 import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import org.xmldb.api.base.XMLDBException;
 
 import util.Bds;
-
-import java.sql.Date;
-import java.util.GregorianCalendar;
 
 /**
  * Servlet implementation class AddNewBd
@@ -62,12 +55,16 @@ public class AddNewBd extends HttpServlet {
 		String description = request.getParameter("descriptionBd");
 		
 		// date courante
-        GregorianCalendar gcal = new GregorianCalendar();
-        XMLGregorianCalendar xgcal = null;
+		DateTime dateTime = new DateTime();
+		
+		XMLGregorianCalendar xgcal = null;
 		try {
-			xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
-		} catch (DatatypeConfigurationException e) {
-			e.printStackTrace();
+			xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+			xgcal.setYear(dateTime.getYear());
+			xgcal.setMonth(dateTime.getMonthOfYear());
+			xgcal.setDay(dateTime.getDayOfMonth());
+		} catch (DatatypeConfigurationException e1) {
+			e1.printStackTrace();
 		}
 		
 		Xquery xquery = null;
@@ -76,7 +73,6 @@ public class AddNewBd extends HttpServlet {
 			xquery = new Xquery();
 			bds = DataBinding.deserialise(xquery.getXMLResource());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         

@@ -72,7 +72,7 @@ public class BD extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 			IOException {
 		
-		int identifiant = Integer.parseInt(request.getParameter("supprimer hide"));
+		int identifiant = Integer.parseInt(request.getParameter("identifiantBd"));
 		
 		try {
 			xquery = new Xquery();
