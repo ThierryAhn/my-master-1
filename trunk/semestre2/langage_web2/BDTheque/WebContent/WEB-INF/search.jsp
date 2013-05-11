@@ -42,27 +42,28 @@
 					<div class="fix"></div>
 
 					<div id="advancedSearch">
-						<h1>Recharche Avancée :</h1>
+						<h1>Recherche Avancée :</h1>
+						<br/>
 						<form method="post" action="Search">
 							<label for="titreBd">Titre </label> 
-							<input type="text" id="titreBd" name="titreBd" value="" size="30" maxlength="30" /> 
+							<input type="text" id="titreBd" name="Titre" value="" size="30" maxlength="30" /> 
 							<br /> 
 							<label for="serieBd">Serie </label> 
-							<input type="text" id="serieBd" name="serieBd" value="" size="30" maxlength="30" /> 
+							<input type="text" id="serieBd" name="Serie" value="" size="30" maxlength="30" /> 
 							<br /> 
 							<label for="scenarioBd">Scenario</label>
-							<input type="text" id="scenarioBd" name="scenarioBd" value="" size="30" maxlength="30" /> 
+							<input type="text" id="scenarioBd" name="Scenario" value="" size="30" maxlength="30" /> 
 							<br /> 
 							<label for="dessinBd">Dessin </label> 
-							<input type="text" id="dessinBd" name="dessinBd" value="" size="30" maxlength="30" /> 
+							<input type="text" id="dessinBd" name="Dessin" value="" size="30" maxlength="30" /> 
 							<br />
                             <label for="couleursBd">Couleurs </label> <input type="text" id="couleursBd" name="couleursBd" value="" size="30" maxlength="30" /> 
 							<br /> 
 							<label for="editeurBd">Editeur</label>
-							<input type="text" id="editeurBd" name="editeurBd" value="" size="30" maxlength="30" />
+							<input type="text" id="editeurBd" name="Editeur" value="" size="30" maxlength="30" />
 							<br /> 
 							<label for="isbnBd">ISBN</label> 
-							<input type="text" id="isbnBd" name="isbnBd" value="" size="30" maxlength="30" /> 
+							<input type="text" id="isbnBd" name="ISBN" value="" size="30" maxlength="30" /> 
 							<br /> 
 							<input class="button" type="submit" value="search" />
 						</form>
