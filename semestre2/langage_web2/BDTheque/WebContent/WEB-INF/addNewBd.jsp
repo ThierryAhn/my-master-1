@@ -29,9 +29,9 @@
 		<label for="formatBd">Format </label>
 		<select id="formatBd" name="formatBd" required>
 			<option value="">Please select</option>
-			<option value="petitFormat">Petit Format</option>
-			<option value="moyenFormat">Moyen Format</option>
-			<option value="grandFormat">Grand Format</option>
+			<option value="Petit Format">Petit Format</option>
+			<option value="Moyen Format">Moyen Format</option>
+			<option value="Grand Format">Grand Format</option>
 		</select>
 		<br/> <br/>
 		
