@@ -34,4 +34,14 @@
     <servlet-name>Search</servlet-name>
     <url-pattern>/Search</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BD</display-name>
+    <servlet-name>BD</servlet-name>
+    <servlet-class>controller.BD</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BD</servlet-name>
+    <url-pattern>/BD</url-pattern>
+  </servlet-mapping>
 </web-app>
