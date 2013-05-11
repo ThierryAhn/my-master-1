@@ -81,12 +81,13 @@ public class Xquery {
 	
 	/**
 	 * Supprime une bd.
-	 * @param bd bd a supprimer.
+	 * @param identifiant identifiant de la bd a supprimer.
 	 * @throws XMLDBException 
 	 */
-	public void delete(Bd bd) throws XMLDBException{
-		String str = DataBinding.serialisetoString(bd);
-		String query= namespace + "update delete "+str;
+	public void delete(int identifiant) throws XMLDBException{
+		String query = namespace + "for $c in collection(\"bedetheque\")/bd:bds/bd:bd"+
+				" where $c/bd:Informations/bd:Identifiant = "+ identifiant +" return update delete $c";
+		
 		xpqs.query(query);
 	}
 	
