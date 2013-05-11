@@ -1403,13 +1403,13 @@ h6 {
 }
 
 /* Modal Forms */
-#myModal form label {
+#myModal form label,#advancedSearch form label {
 	float: left;
 	width: 200px;
 	margin: 3px 0px 0px 0px;
 }
 
-#myModal form input {
+#myModal form input,#advancedSearch form input{
 	margin: 3px 3px 0px 0px;
 	border: 1px #999 solid;
 }
