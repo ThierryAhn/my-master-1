@@ -26,7 +26,11 @@ public class Index extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
+			IOException {
+		
+		System.out.println("get " +request.getParameter("Identifiant"));
+		
 		Bds bds = null;
 		try {
 			Xquery xquery = new Xquery();
@@ -47,8 +51,10 @@ public class Index extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
+			IOException {
 		// TODO Auto-generated method stub
+		System.out.println("valu");
 	}
 
 }

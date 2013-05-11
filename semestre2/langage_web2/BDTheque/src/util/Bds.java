@@ -184,6 +184,7 @@ public class Bds {
         "image",
         "description"
     })
+    @XmlRootElement(name = "bd")
     public static class Bd {
 
         @XmlElement(name = "Informations", required = true)

@@ -13,10 +13,12 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import model.DataBinding;
+import model.Xquery;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.xmldb.api.base.XMLDBException;
 
 import util.Bds;
 
@@ -67,9 +69,18 @@ public class AddNewBd extends HttpServlet {
 		} catch (DatatypeConfigurationException e) {
 			e.printStackTrace();
 		}
+		
+		Xquery xquery = null;
+		Bds bds = null;
+		try {
+			xquery = new Xquery();
+			bds = DataBinding.deserialise(xquery.getXMLResource());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
-        // creation du bean
-        Bds bds = new Bds();
+        // creation du bean bd
         Bds.Bd bd = new Bds.Bd();
         
         // infos bd
@@ -96,22 +107,20 @@ public class AddNewBd extends HttpServlet {
         descriptionBd.setValue(description);
         bd.setDescription(descriptionBd);
         
-        // ajout de la bd dans la liste des bds
-        bds.getBd().add(bd);
         
+        // execution de l'insert
+        try {
+			xquery.insert(bd);
+		} catch (XMLDBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
-        /* File file = new File("xmldb:exist://localhost:8080/exist/xmlrpc/db/bedeTheque/BD.xml");
-        Bds bds = DataBinding.deserialise(file);
-        
-        
-        // injection des bean
-     	request.setAttribute("bds", bds);
-     		
      	//recuperation du dispatcher
      	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
      		
      	//envoie a la jsp
-     	dispatcher.include(request, response);*/
+     	dispatcher.include(request, response);
 	}
 
 }
