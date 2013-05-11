@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.xmldb.api.base.XMLDBException;
+
 import model.DataBinding;
 import model.Xquery;
 import util.Bds;
@@ -15,12 +18,14 @@ import util.Bds;
  */
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private Bds bds;
+	private Xquery xquery;
+	
     /**
      * Default constructor. 
      */
     public Index() {
-        // TODO Auto-generated constructor stub
+    	super();
     }
 
 	/**
@@ -28,14 +33,13 @@ public class Index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 			IOException {
-		
-		Bds bds = null;
 		try {
-			Xquery xquery = new Xquery();
+			xquery = new Xquery();
 			bds = DataBinding.deserialise(xquery.getXMLResource());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		// injection des bean
 		request.setAttribute("bds", bds);
 		
@@ -52,7 +56,6 @@ public class Index extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 			IOException {
 		// TODO Auto-generated method stub
-		System.out.println("valu");
 	}
 
 }

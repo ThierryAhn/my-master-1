@@ -111,10 +111,14 @@ public class AddNewBd extends HttpServlet {
         // execution de l'insert
         try {
 			xquery.insert(bd);
-		} catch (XMLDBException e) {
+			bds = DataBinding.deserialise(xquery.getXMLResource());
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        
+        // injection des bean
+        request.setAttribute("bds", bds);
         
      	//recuperation du dispatcher
      	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
