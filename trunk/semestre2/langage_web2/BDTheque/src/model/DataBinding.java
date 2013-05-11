@@ -57,8 +57,13 @@ public class DataBinding {
 			ex.printStackTrace();
 		}
 	}
-
-	public static String serialisetoString(Bds bd) {
+	
+	/**
+	 * Serialise une liste de bd au format string.
+	 * @param bds liste de bd a serialise.
+	 * @return une liste de bd serialise au format string.
+	 */
+	public static String serialisetoString(Bds bds) {
 		StringWriter sw = new StringWriter();	
 		try {
 			JAXBContext context = JAXBContext.newInstance(Bds.class);
@@ -66,13 +71,19 @@ public class DataBinding {
 			
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			
-			m.marshal(bd, sw);
+			m.marshal(bds, sw);
 
 		} catch (JAXBException ex) {
 			ex.printStackTrace();
 		}
 		return sw.toString();
 	}
+	
+	/**
+	 * Serialise un bd au format string.
+	 * @param bd bd a serialise.
+	 * @return un bd serialise au format string.
+	 */
 	public static String serialisetoString(Bd bd) {
 		StringWriter sw = new StringWriter();	
 		try {
