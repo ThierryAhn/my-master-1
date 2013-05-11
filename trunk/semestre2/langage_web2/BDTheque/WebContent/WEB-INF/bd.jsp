@@ -31,9 +31,12 @@
 
 		<!-- menu -->
 		<%@ include file="navigation.jsp"%>
-
+	
 		<!-- boite modale pour ajouter une bd -->
 		<%@ include file="addNewBd.jsp"%>
+	
+		<!-- boite modale pour modifier une bd -->
+		<%@ include file="modifyBd.jsp"%>
 
 		<!-- Contenu de la page -->
 		<div id="content" class="col-full">
@@ -127,9 +130,22 @@
 						<!-- Actions Bd : supprimer, modifier -->
 						<div>
 							<form method="post" action="">
-								<input name="supprimer hide" type="hidden"
-									value="${bd.informations.identifiant}" /> <input class="button"
-									type="submit" value="Supprimer" />
+								<!-- input pour cacher l'identifiant du bd -->
+								<input name="identifiantBd" type="hidden" 
+									value="${bd.informations.identifiant}" /> 
+								
+								<!-- bouton supprimer -->
+								<input class="button" type="submit" value="Supprimer" />
+								
+								<!-- bouton modifier -->
+								<a href="#" data-reveal-id="modifyModal" data-animation="fadeAndPop" 
+									data-animationspeed="300" data-closeonbackgroundclick="true" 
+									data-dismissmodalclass="close-reveal-modal">
+									
+									<input class="button"  type="button" value="Modifier" />
+								</a>
+			
+							
 							</form>
 						</div>
 

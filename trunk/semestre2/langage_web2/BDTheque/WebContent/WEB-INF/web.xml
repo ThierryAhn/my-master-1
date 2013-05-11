@@ -44,4 +44,14 @@
     <servlet-name>BD</servlet-name>
     <url-pattern>/BD</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModifyBd</display-name>
+    <servlet-name>ModifyBd</servlet-name>
+    <servlet-class>controller.ModifyBd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyBd</servlet-name>
+    <url-pattern>/ModifyBd</url-pattern>
+  </servlet-mapping>
 </web-app>

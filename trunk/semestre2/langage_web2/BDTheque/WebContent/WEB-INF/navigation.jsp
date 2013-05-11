@@ -3,15 +3,13 @@
 		<li><a href="Index">Accueil</a></li>
 		
 		<li>
-			<a href="#" data-reveal-id="myModal" data-animation="fadeAndPop" data-animationspeed="300" 
+			<a href="#" data-reveal-id="addModal" data-animation="fadeAndPop" data-animationspeed="300" 
 				data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal">
 				Ajouter Bd
 			</a>
 		</li>
 		
 		<li><a href="Search">Recherche avancée</a></li>
-		
-		<li><a href="#">Supprimer Bd</a></li>
 	</ul>
 	<div id="search">
 		<form method="post" action="">
