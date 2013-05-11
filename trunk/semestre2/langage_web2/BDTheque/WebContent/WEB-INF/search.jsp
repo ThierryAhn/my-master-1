@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -23,130 +23,54 @@
 </head>
 
 <body class="two-col-left width-940"
-    style="-moz-user-select: none; cursor: default;">
-    <div id="wrapper">
+	style="-moz-user-select: none; cursor: default;">
+	<div id="wrapper">
 
-        <!-- header -->
-        <%@ include file="header.jsp"%>
+		<!-- header -->
+		<%@ include file="header.jsp"%>
 
-        <!-- menu -->
-        <%@ include file="navigation.jsp"%>
+		<!-- menu -->
+		<%@ include file="navigation.jsp"%>
 
-        <!-- boite modale pour ajouter une bd -->
-        <%@ include file="addNewBd.jsp"%>
-    
-        <!-- Contenu de la page -->
-        <div id="content" class="col-full">
-            <div id="main-sidebar-container">
-                <div id="main" class="col-left">
-                    <div class="fix"></div>
+		<!-- boite modale pour ajouter une bd -->
+		<%@ include file="addNewBd.jsp"%>
 
-                    <!-- Parcours et affichage des BD -->
-                    <c:forEach var="bd" items="${bds.bd}">
-                        <div
-                            class="post-17396 post type-post status-publish format-standard hentry">
-                            <c:out value="" />
-                            <!-- Image bd -->
-                            <a title="${bd.informations.titre}" href="#"> <img
-                                src="${bd.image.value}" alt="${bd.informations.titre}"
-                                class="woo-image thumbnail alignright" width="300" height="200" />
-                            </a>
-                            
-                            <!-- Titre dans le coin a gauche -->
-                            <h2 class="title">
-                                <a href="#" rel="bookmark" title="${bd.informations.titre}">
-                                    ${bd.informations.titre} </a>
-                            </h2>
+		<!-- Contenu de la page -->
+		<div id="content" class="col-full">
+			<div id="main-sidebar-container">
+				<div id="main" class="col-left">
+					<div class="fix"></div>
 
-                            <div class="post-meta"></div>
-                            <!-- Informations bd -->
-                            <div class="entry">
-                                <!-- <p> -->
-                                    <table>
-    
-                                        <tr>
-                                            <td>Titre :</td>
-                                            <td><c:out value="${bd.informations.titre}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Serie :</td>
-                                            <td><c:out value="${bd.informations.serie}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Identifiant :</td>
-                                            <td><c:out value="${bd.informations.identifiant}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Scenario :</td>
-                                            <td><c:out value="${bd.informations.scenario}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Dessin :</td>
-                                            <td><c:out value="${bd.informations.dessin}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Couleurs :</td>
-                                            <td><c:out value="${bd.informations.couleurs}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Editeur :</td>
-                                            <td><c:out value="${bd.informations.editeur}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Format :</td>
-                                            <td><c:out value="${bd.informations.format}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>ISBN :</td>
-                                            <td><c:out value="${bd.informations.ISBN}" /></td>
-                                        </tr>
-    
-                                        <tr>
-                                            <td>Crée le :</td>
-                                            <td><c:out value="${bd.informations.date}" /></td>
-                                        </tr>
-                                    </table>
-                                <!-- </p> -->
-                            </div>
-                            
-                            <div class="fix"></div>
-                            
-                            <span class="fbreplace"> </span>
-
-                            <!-- Description bd -->
-                            <div class="post-more">
-                                <c:out value="${bd.description.value}" />
-                            </div>
-                            
-                            <!-- Actions Bd : supprimer, modifier -->
-                            <div>
-                                <form method="post" action="">
-                                    <%-- <a href="?Identifiant=${bd.informations.identifiant}" id="toto">
-                                        Supprimer
-                                    </a> --%>
-                                    <input class="button" type="submit" value="Supprimer"/>
-                                </form>                         
-                            </div>
-
-                        </div>
-                        
-                        <!-- /.post -->
-                    </c:forEach>
-
-                    <div class="pagination woo-pagination"></div>
-                </div>
-                <!--  -->
-                <%@ include file="sideBar.jsp"%>
-            </div>
-        </div>
-    </div>
+					<div id="advancedSearch">
+						<h1>Recharche Avancée :</h1>
+						<form method="post" action="Search">
+							<label for="titreBd">Titre </label> 
+							<input type="text" id="titreBd" name="titreBd" value="" size="30" maxlength="30" /> 
+							<br /> 
+							<label for="serieBd">Serie </label> 
+							<input type="text" id="serieBd" name="serieBd" value="" size="30" maxlength="30" /> 
+							<br /> 
+							<label for="scenarioBd">Scenario</label>
+							<input type="text" id="scenarioBd" name="scenarioBd" value="" size="30" maxlength="30" /> 
+							<br /> 
+							<label for="dessinBd">Dessin </label> 
+							<input type="text" id="dessinBd" name="dessinBd" value="" size="30" maxlength="30" /> 
+							<br />
+                            <label for="couleursBd">Couleurs </label> <input type="text" id="couleursBd" name="couleursBd" value="" size="30" maxlength="30" /> 
+							<br /> 
+							<label for="editeurBd">Editeur</label>
+							<input type="text" id="editeurBd" name="editeurBd" value="" size="30" maxlength="30" />
+							<br /> 
+							<label for="isbnBd">ISBN</label> 
+							<input type="text" id="isbnBd" name="isbnBd" value="" size="30" maxlength="30" /> 
+							<br /> 
+							<input class="button" type="submit" value="search" />
+						</form>
+					</div>
+					<div class="pagination woo-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
