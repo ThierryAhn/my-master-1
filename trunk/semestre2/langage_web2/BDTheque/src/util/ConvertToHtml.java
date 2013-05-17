@@ -38,7 +38,6 @@ public class ConvertToHtml {
 		TransformerFactory transFact = TransformerFactory.newInstance();
 		Transformer trans = transFact.newTransformer(xslSource);
 		trans.transform(xmlSource, htmlResult);
-		System.out.println("done");
 	}
 	
 }

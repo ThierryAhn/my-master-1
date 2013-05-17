@@ -521,6 +521,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 	padding: 10px;
 	margin: 5px 0;
 	text-align : justify;
+	min-height : 180px;
 }
 
 .entry .page-link {
@@ -978,7 +979,7 @@ img.ui-datepicker-trigger {
 	padding: 0px;
 }
 
-.entry .quote,.entry .video {
+/* .entry .quote,.entry .video {
 	margin-bottom: 1.5em;
 }
 
@@ -995,7 +996,7 @@ img.ui-datepicker-trigger {
 
 .entry .quote cite:before {
 	content: '~ '
-}
+} */
 
 .widget #connect {
 	background: none;

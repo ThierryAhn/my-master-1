@@ -20,6 +20,10 @@
 						width : 800px;
 						text-align : justify;
 					}
+					
+					#clear{
+						clear : both;
+					}
 				</style>
 			</head>
 
@@ -83,6 +87,14 @@
 								</td>
 							</tr>
 							
+							<!-- Couleurs -->
+							<tr>
+								<td class="label">Couleurs : </td>
+								<td>
+									<xsl:value-of select="bds:Informations/bds:Couleurs" />
+								</td>
+							</tr>
+							
 							<!-- Editeur -->
 							<tr>
 								<td class="label">Editeur : </td>
@@ -98,6 +110,14 @@
 									<xsl:value-of select="bds:Informations/bds:ISBN" />
 								</td>
 							</tr>
+							
+							<!-- Format -->
+							<tr>
+								<td class="label">Format : </td>
+								<td>
+									<xsl:value-of select="bds:Informations/bds:Format" />
+								</td>
+							</tr>
 
 							<!-- Date de creation -->
 							<tr>
@@ -109,7 +129,9 @@
 
 						</xsl:template>
 					</table>
-
+					
+					<div id="clear"></div>
+					
 					<!-- Description de la BD -->
 					<p id="description">
 						<b>Résumé de la série : </b>

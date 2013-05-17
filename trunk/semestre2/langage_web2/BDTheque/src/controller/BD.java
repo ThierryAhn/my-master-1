@@ -153,9 +153,7 @@ public class BD extends HttpServlet {
 					e.printStackTrace();
 				}
 				
-				
 				// destruction fichier temporaire créé
-				
 			}else{
 				// si clic sur bouton export html
 				if(actionButton.equals("Export HTML")){
@@ -171,6 +169,15 @@ public class BD extends HttpServlet {
 					}
 				}
 			}
+			
+			request.setAttribute("bd", bd);
+			
+			//recuperation du dispatcher
+	     	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
+	     			"/WEB-INF/bd.jsp");
+	     		
+	     	//envoie a la jsp
+	     	dispatcher.include(request, response);
 		}
 		
 	}
