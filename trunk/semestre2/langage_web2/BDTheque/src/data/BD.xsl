@@ -5,7 +5,22 @@
 		<html>
 			<head>
 				<title>XML BD</title>
-				<link rel="stylesheet" type="text/css" href="src/css/style.css" />
+				
+				<style type="text/css">
+					/* image de la BD */
+					#image img{
+						float : left;
+						height : 316px;
+						width : 230px;
+						margin-right : 10px;
+					}
+					
+					/* description */
+					#description{
+						width : 800px;
+						text-align : justify;
+					}
+				</style>
 			</head>
 
 			<body>
