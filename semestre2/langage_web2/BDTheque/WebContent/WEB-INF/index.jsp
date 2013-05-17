@@ -46,6 +46,7 @@
 						<div
 							class="post-17396 post type-post status-publish format-standard hentry">
 							<c:out value="" />
+							
 							<!-- Image bd -->
 							<a title="${bd.informations.titre}" href="#"> <img
 								src="${bd.image.value}" alt="${bd.informations.titre}"

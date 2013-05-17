@@ -81,15 +81,8 @@
 									</tr>
 								</table>
 							</div>
-							<!-- Actions Bd : supprimer, modifier -->
-							<div>
-								<form method="post" action="">
-									<%-- <a href="?Identifiant=${bd.informations.identifiant}" id="toto">
-                                        Supprimer
-                                    </a> --%>
-									<input class="button" type="submit" value="Supprimer" />
-								</form>
-							</div>
+							<!-- Actions Bd : supprimer, modifier, export -->
+							<%@ include file="actions.jsp"%>
 						</div>
 					</c:forEach>
 					<div class="fix"></div>
