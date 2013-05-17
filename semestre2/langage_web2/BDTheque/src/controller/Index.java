@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.xmldb.api.base.XMLDBException;
-
 import model.DataBinding;
 import model.Xquery;
 import util.Bds;
@@ -35,7 +33,7 @@ public class Index extends HttpServlet {
 			IOException {
 		try {
 			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getXMLResource());
+			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -71,7 +71,7 @@ public class AddNewBd extends HttpServlet {
 		Bds bds = null;
 		try {
 			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getXMLResource());
+			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -108,7 +108,7 @@ public class AddNewBd extends HttpServlet {
         try {
 			xquery.insert(bd);
 			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getXMLResource());
+			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

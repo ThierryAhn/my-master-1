@@ -93,6 +93,9 @@ public class DataBinding {
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, false);
 			m.setProperty(Marshaller.JAXB_FRAGMENT, true);
 			
+			//String schemaLocation ="xsi:schemaLocation=http://www.univ-rouen.fr/bd ../xsd/BD.xsd";
+			//m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,schemaLocation);
+			
 			m.marshal(bd, sw);
 
 		} catch (JAXBException ex) {

@@ -35,7 +35,7 @@ public class Search extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getXMLResource());
+			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

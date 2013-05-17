@@ -22,9 +22,9 @@ public class Xquery {
 	 */
 	private static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/bedetheque";
 	/**
-	 * Ressource XML.
+	 * Ressource sur exists.
 	 */
-	private XMLResource res;
+	private XMLResource resource;
 	/**
 	 * Service XPathQuery
 	 */
@@ -35,6 +35,11 @@ public class Xquery {
 	private static String namespace = "declare namespace bd=\"http://www.univ-rouen.fr/bd\";";
 
 	/**
+	 * Collection des ressources sur exists.
+	 */
+	private Collection collection;
+	
+	/**
 	 * Constructor.
 	 * @throws Exception
 	 */
@@ -42,14 +47,13 @@ public class Xquery {
 		Class<?> cl = Class.forName("org.exist.xmldb.DatabaseImpl");
 		Database database = (Database) cl.newInstance();
 		DatabaseManager.registerDatabase(database);
-		Collection col  = DatabaseManager.getCollection(URI);
+		collection  = DatabaseManager.getCollection(URI);
 		
-		xpqs = (XPathQueryService)col.getService("XPathQueryService", "1.0");
+		xpqs = (XPathQueryService)collection.getService("XPathQueryService", "1.0");
 		xpqs.setProperty("indent", "yes");
 		
-		col.setProperty(OutputKeys.INDENT, "yes");
-		col.setProperty(EXistOutputKeys.EXPAND_XINCLUDES, "no");
-		res = (XMLResource)col.getResource("BD.xml");
+		collection.setProperty(OutputKeys.INDENT, "yes");
+		collection.setProperty(EXistOutputKeys.EXPAND_XINCLUDES, "no");
 	}
 
 	/**
@@ -64,8 +68,14 @@ public class Xquery {
 	 * Retourne la ressource xml.
 	 * @return la ressource xml.
 	 */
-	public XMLResource getXMLResource(){
-		return res;
+	public XMLResource getResource(String resourceName){
+		try {
+			resource = (XMLResource)collection.getResource(resourceName);
+		} catch (XMLDBException e) {
+			e.printStackTrace();
+		}
+		
+		return resource;
 	}
 	
 	/**
