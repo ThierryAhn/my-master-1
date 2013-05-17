@@ -3,11 +3,16 @@ package util;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
@@ -22,7 +27,7 @@ import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 
 /**
- * Classe ConvertToPdf qui transforme notre xsl-fo en pdf.
+ * Classe ConvertToPdf qui transforme un fichier bd.xml en pdf.
  * @author AHOUNOU Folabi Thierry & ABALINE Rachid
  *
  */
@@ -30,8 +35,8 @@ public class ConvertToPdf {
 
 	/**
 	 * Constructeur
-	 * @param xslt fichier xslt
-	 * @param xml fichier xml
+	 * @param xslt nom fichier xslt
+	 * @param xml nom fichier xml
 	 * @param pdf nom du fichier pdf a generer
 	 * @throws IOException
 	 * @throws TransformerException
@@ -39,14 +44,16 @@ public class ConvertToPdf {
 	 */
 	public ConvertToPdf(String xslt, String xml, String pdf) throws IOException, 
 				TransformerException, FOPException{
-
-		// fichier xsl-fo
-		File xsltfile = new File(xslt);
+		
+		// fichier xml
+		FileInputStream fis = new FileInputStream(xml);
+		InputStreamReader inXML = new InputStreamReader(fis, "ISO-8859-1");
+		
 		// recuperation de la source xml
-		StreamSource source = new StreamSource(new File(xml));
+		StreamSource source = new StreamSource(inXML);
 		// creation du transform source
-		StreamSource transformSource = new StreamSource(xsltfile);
-
+		StreamSource transformSource = new StreamSource(new File(xslt));
+		
 		// creation instance de fop factory
 		FopFactory fopFactory = FopFactory.newInstance();
 
@@ -55,10 +62,12 @@ public class ConvertToPdf {
 		ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
 		Transformer xslfoTransformer = getTransformer(transformSource);
+		
 		// construction fop pour pdf
 		Fop fop = fopFactory.newFop("application/pdf", foUserAgent, outStream);
 		
 		Result result = new SAXResult(fop.getDefaultHandler());
+		
 		// xslt transformation
 		xslfoTransformer.transform(source, result);
 		
@@ -98,6 +107,7 @@ public class ConvertToPdf {
 	 */
 	public static void main(String [] args) throws FOPException, IOException, 
 					TransformerException{
+		
 		new ConvertToPdf("src/model/BD-FO.xsl", "src/data/BD1.xml", "BD.pdf");
 	}
 
