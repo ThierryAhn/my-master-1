@@ -1,6 +1,8 @@
 package model;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringWriter;
 
 import javax.xml.bind.JAXBContext;
@@ -8,12 +10,13 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import org.xml.sax.SAXException;
 import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.XMLResource;
-
 import util.Bds;
 import util.Bds.Bd;
 import util.ObjectFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class DataBinding {
 
@@ -26,7 +29,6 @@ public class DataBinding {
 	public static Bds deserialise(XMLResource res) throws XMLDBException{
 		JAXBContext context = null;
 		Unmarshaller um;
-
 		try {
 			context = JAXBContext.newInstance("util");
 			um = context.createUnmarshaller();
@@ -35,6 +37,33 @@ public class DataBinding {
 			Bds bds = factory.createBds();
 
 			bds = (Bds)um.unmarshal(res.getContentAsDOM());
+			return bds;
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * 
+	 * @param xml
+	 * @return
+	 * @throws XMLDBException
+	 * @throws IOException 
+	 * @throws SAXException 
+	 * @throws ParserConfigurationException 
+	 */
+	public static Bds deserialise(InputStream xml) throws XMLDBException, SAXException, IOException, ParserConfigurationException{
+		JAXBContext context = null;
+		Unmarshaller um;
+		try {
+			context = JAXBContext.newInstance("util");
+			um = context.createUnmarshaller();
+
+			ObjectFactory factory = new ObjectFactory();
+			Bds bds = factory.createBds();
+
+			bds = (Bds)um.unmarshal(xml);
 			return bds;
 		} catch (JAXBException e) {
 			e.printStackTrace();
