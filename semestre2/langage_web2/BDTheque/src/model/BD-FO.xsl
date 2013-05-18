@@ -51,9 +51,12 @@
 								<!-- Affichage de l'image -->
 								<fo:table-cell>
 									<fo:block>
-										<fo:external-graphic>
+										<fo:external-graphic content-height="scale-to-fit" height="4.00in"  
+                                               	content-width="2.70in" scaling="non-uniform" >
 											<xsl:attribute name="src">
                                                	<xsl:value-of select="bds:Image" />
+                                               	<!-- content-height="scale-to-fit" height="2.00in"  
+                                               	content-width="2.00in" scaling="non-uniform" -->
                                            	</xsl:attribute>
 										</fo:external-graphic>
 									</fo:block>

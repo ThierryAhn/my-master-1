@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -68,10 +69,10 @@ public class AddNewBd extends HttpServlet {
 		}
 		
 		Xquery xquery = null;
-		Bds bds = null;
+		Bds bdss = null;
 		try {
 			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
+			bdss = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -83,7 +84,7 @@ public class AddNewBd extends HttpServlet {
         Bds.Bd.Informations informations = new Bds.Bd.Informations();
         informations.setTitre(titre);
         informations.setSerie(serie);
-        informations.setIdentifiant(bds.getBd().size() + 1);
+        informations.setIdentifiant(bdss.getBd().size() + 1);
         informations.setScenario(scenario);
         informations.setDessin(dessin);
         informations.setCouleurs(couleurs);
@@ -108,14 +109,26 @@ public class AddNewBd extends HttpServlet {
         try {
 			xquery.insert(bd);
 			xquery = new Xquery();
-			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
+			bdss = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
-        // injection des bean
+        List<Bds.Bd> bds = bdss.getBd().subList(0, 2);
+        
+        int page = 1;
+        int recordsPerPage = 2;
+        
+        int noOfRecords = bdss.getBd().size();
+		int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
+		
+		// injection des bean
+		request.setAttribute("noOfRecords", noOfRecords);
+		request.setAttribute("noOfPages", noOfPages);
+        request.setAttribute("bdss", bdss);
         request.setAttribute("bds", bds);
+        request.setAttribute("currentPage", page);
         
      	//recuperation du dispatcher
      	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");

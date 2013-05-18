@@ -24,6 +24,7 @@
 					#clear{
 						clear : both;
 					}
+					
 				</style>
 			</head>
 

@@ -123,7 +123,6 @@ public class Bds {
         return this.bd;
     }
 
-
     /**
      * <p>Java class for anonymous complex type.
      * 
