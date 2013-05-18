@@ -10,6 +10,13 @@
 		</li>
 		
 		<li><a href="Search">Recherche avancée</a></li>
+		
+		<li>
+			<a href="#" data-reveal-id="uploadModal" data-animation="fadeAndPop" data-animationspeed="300" 
+				data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal">
+				Upload Bd
+			</a>
+		</li>
 	</ul>
 	<div id="search">
 		<form method="post" action="">

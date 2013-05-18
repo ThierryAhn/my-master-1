@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,7 +32,6 @@ import util.ConvertToPdf;
  */
 public class BD extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Bds bds;
 	private Xquery xquery;
        
     /**
@@ -49,7 +49,7 @@ public class BD extends HttpServlet {
 		int identifiant = Integer.parseInt(request.getParameter("Identifiant"));
 		
 		xquery = null;
-		bds = null;
+		Bds bds = null;
 		try {
 			xquery = new Xquery();
 			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
@@ -88,18 +88,33 @@ public class BD extends HttpServlet {
 		int identifiant = Integer.parseInt(request.getParameter("identifiantBd"));
 		String actionButton = request.getParameter("actionButton");
 		
+		Bds bdss = null;
+		
 		// si clic sur bouton supprimer
 		if(actionButton.equals("Supprimer")){
 			try {
 				xquery = new Xquery();
 				xquery.delete(identifiant);
-				bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
+				bdss = DataBinding.deserialise(xquery.getResource("BD.xml"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
 			// injection des bean
-			request.setAttribute("bds", bds);	
+			List<Bds.Bd> bds = bdss.getBd().subList(0, 2);
+	        
+	        int page = 1;
+	        int recordsPerPage = 2;
+	        
+	        int noOfRecords = bdss.getBd().size();
+			int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
+			
+			// injection des bean
+			request.setAttribute("noOfRecords", noOfRecords);
+			request.setAttribute("noOfPages", noOfPages);
+	        request.setAttribute("bdss", bdss);
+	        request.setAttribute("bds", bds);
+	        request.setAttribute("currentPage", page);	
 			
 			//recuperation du dispatcher
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
@@ -108,8 +123,10 @@ public class BD extends HttpServlet {
 			dispatcher.include(request, response);
 		}else{ // export pdf et html
 			
+			RequestDispatcher dispatcher = null;
+			
 			xquery = null;
-			bds = null;
+			Bds bds = null;
 			try {
 				xquery = new Xquery();
 				bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
@@ -153,7 +170,13 @@ public class BD extends HttpServlet {
 					e.printStackTrace();
 				}
 				
+				//recuperation du dispatcher
+				dispatcher = getServletContext().getRequestDispatcher(
+		     			"/BD.pdf");
+				
 				// destruction fichier temporaire créé
+				File file = new File(xmlFileLocation);
+				file.delete();
 			}else{
 				// si clic sur bouton export html
 				if(actionButton.equals("Export HTML")){
@@ -164,18 +187,20 @@ public class BD extends HttpServlet {
 					// conversion en html
 					try {
 						new ConvertToHtml(xslFileLocation, xmlFileLocation, htmlFileLocation);
-					} catch (Exception e) {
+					}catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
+				
+				//recuperation du dispatcher
+				dispatcher = getServletContext().getRequestDispatcher(
+		     			"/BD.html");
 			}
 			
 			request.setAttribute("bd", bd);
 			
-			//recuperation du dispatcher
-	     	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
-	     			"/WEB-INF/bd.jsp");
-	     		
+			
+			
 	     	//envoie a la jsp
 	     	dispatcher.include(request, response);
 		}
