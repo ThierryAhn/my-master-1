@@ -100,8 +100,14 @@ public class BD extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+			
+			int count = 2;
+	        
+	        if(count > bdss.getBd().size())
+	        	count = bdss.getBd().size();
+			
 			// injection des bean
-			List<Bds.Bd> bds = bdss.getBd().subList(0, 2);
+			List<Bds.Bd> bds = bdss.getBd().subList(0, count);
 	        
 	        int page = 1;
 	        int recordsPerPage = 2;
