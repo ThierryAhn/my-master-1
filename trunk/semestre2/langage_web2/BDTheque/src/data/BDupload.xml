@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bds xmlns="http://www.univ-rouen.fr/bd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.univ-rouen.fr/bd BD.xsd ">
+    <!-- À bout portant : Premier sang -->
+    <bd>
+        <!-- Informations -->
+        <Informations>
+            <Titre>Le jugement de Dieu</Titre>
+            <Serie>Le Dernier Cathare</Serie>
+            <Identifiant>499</Identifiant>
+            <Scenario>Delalande, Arnaud</Scenario>
+            <Dessin>Lambert, Éric</Dessin>
+            <Couleurs>Pradelle, Bruno</Couleurs>
+            <Editeur>12bis et Grasset</Editeur>
+            <Format>Grand format</Format>
+            <ISBN>978-2-356-48391-1</ISBN>
+            <Date>2002-01-19</Date>
+        </Informations>
+
+        <!-- Image -->
+        <Image>http://www.bedetheque.com/media/Couvertures/Couv_187448.jpg</Image>
+
+        <!-- Description -->
+        <Description> 
+            "Trente ans. Près de trente ans se sont écoulés depuis qu'Escartille de Puivert, le troubadour devenu Parfait cathare, a perdu Louve dans la plaine de Muret.
+             Enfin, il a retrouvé le prétendu trésor rapporté de Terre Sainte par son père, le Chevalier à la Rose.
+        </Description>
+    </bd>
+
+    <bd>
+        <!-- Informations -->
+        <Informations>
+            <Titre>Atlantis</Titre>
+            <Serie>Prométhée</Serie>
+            <Identifiant>387</Identifiant>
+            <Scenario>Bec, Christophe</Scenario>
+            <Dessin>Bec, Christophe</Dessin>
+            <Couleurs>Gérard, Sébastien</Couleurs>
+            <Editeur>Soleil Productions</Editeur>
+            <Format>Grand format</Format>
+            <ISBN>978-2-302-00442-9</ISBN>
+            <Date>2008-02-12</Date>
+        </Informations>
+
+        <!-- Image -->
+        <Image>http://www.bedetheque.com/media/Couvertures/promethee01_80910.jpg</Image>
+
+        <!-- Description -->
+        <Description> 
+            Une série d'événements planétaires, totalement inexpliqués s'est déclenchée et s'abat 
+            sur la planète jour après jour à 13 heure 13 minutes précises. Quelle en est l'origine ?
+        </Description>
+    </bd>
+</bds>
