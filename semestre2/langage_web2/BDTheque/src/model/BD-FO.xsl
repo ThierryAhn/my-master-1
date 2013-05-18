@@ -78,11 +78,6 @@
 											</fo:block>
 										</xsl:if>
 										
-										<!-- <fo:block>
-											Serie :
-											<xsl:value-of select="bds:Informations/bds:Serie" />
-										</fo:block> -->
-										
 										<!-- Identifiant -->
 										<fo:block>
 											Identifiant :
