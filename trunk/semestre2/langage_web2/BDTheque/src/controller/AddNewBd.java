@@ -115,7 +115,12 @@ public class AddNewBd extends HttpServlet {
 			e.printStackTrace();
 		}
         
-        List<Bds.Bd> bds = bdss.getBd().subList(0, 2);
+        int count = 2;
+        
+        if(count > bdss.getBd().size())
+        	count = bdss.getBd().size();
+        
+        List<Bds.Bd> bds = bdss.getBd().subList(0, count);
         
         int page = 1;
         int recordsPerPage = 2;
