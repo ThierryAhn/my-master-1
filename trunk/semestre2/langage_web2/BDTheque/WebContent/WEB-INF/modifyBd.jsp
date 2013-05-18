@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <div id="modifyModal" class="reveal-modal">
-	<h1>Modifier la BD : ${bd.informations.titre}</h1>
+	<h1>${bd.informations.titre}</h1>
 	
 	<form method="post" action="ModifyBd">
 		<label for="titreBd">Titre </label>
