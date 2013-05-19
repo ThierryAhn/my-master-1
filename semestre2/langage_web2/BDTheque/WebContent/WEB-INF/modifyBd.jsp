@@ -87,8 +87,7 @@
 		<input type="text" id="imageBd" name="imageBd" value="${bd.image.value}" size="30" required/>
 		<br/>
 		
-		<textarea id="descriptionBd" name="descriptionBd" rows="3" cols="47">${bd.description.value}
-		</textarea>
+		<textarea id="descriptionBd" name="descriptionBd" rows="3" cols="47">${bd.description.value}</textarea>
 		<br/>
 		
 		<input type="submit" value="Modifier" />
