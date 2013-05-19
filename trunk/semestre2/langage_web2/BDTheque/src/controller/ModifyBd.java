@@ -57,7 +57,7 @@ public class ModifyBd extends HttpServlet {
 		
 		Xquery xquery = null;
 		
-		// suppression de la bd et on rajoute apres un peu plus bas
+		// suppression de la bd et on rajoute une nouvelle bd apres, un peu plus bas
 		try {
 			xquery = new Xquery();
 			xquery.delete(identifiant);
@@ -67,7 +67,6 @@ public class ModifyBd extends HttpServlet {
 		
 		// date courante
 		DateTime dateTime = new DateTime();
-		
 		XMLGregorianCalendar xgcal = null;
 		try {
 			xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
@@ -81,7 +80,7 @@ public class ModifyBd extends HttpServlet {
 		// creation du bean bd
 		Bds.Bd bd = new Bds.Bd();
 
-		// infos bd
+		// modifications infos bd
 		Bds.Bd.Informations informations = new Bds.Bd.Informations();
 		informations.setTitre(titre);
 		informations.setSerie(serie);

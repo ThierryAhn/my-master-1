@@ -24,7 +24,6 @@ public class SearchLive extends HttpServlet {
      */
     public SearchLive() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -38,7 +37,7 @@ public class SearchLive extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		
+		// rechercher live a partir du titre des bd
 		if (request.getParameter("recherche").length()>0){
 			Bds result = new Bds();
 			for(Bds.Bd temp : bds.getBd()){
@@ -62,7 +61,6 @@ public class SearchLive extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 }

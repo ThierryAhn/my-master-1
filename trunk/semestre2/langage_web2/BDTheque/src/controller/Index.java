@@ -33,6 +33,7 @@ public class Index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 			IOException {
+		// recuperation de la liste des bd sur exists
 		try {
 			xquery = new Xquery();
 			bdss = DataBinding.deserialise(xquery.getResource("BD.xml"));
@@ -40,14 +41,12 @@ public class Index extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
+		// pagination
 		int page = 1;
         int recordsPerPage = 2;
-        
         if(request.getParameter("page") != null)
             page = Integer.parseInt(request.getParameter("page"));
         
-        //Bds bds = new Bds();
         int count = ((page-1)*recordsPerPage)+2;
         if(page == 1){
         	count = 2;
@@ -55,8 +54,6 @@ public class Index extends HttpServlet {
         
         if(count > bdss.getBd().size())
         	count = bdss.getBd().size();
-        
-        //System.out.println("de "+(page-1)*recordsPerPage +" a " +count);
         
         List<Bds.Bd> bds = bdss.getBd().subList((page-1)*recordsPerPage, count);
         
@@ -83,7 +80,6 @@ public class Index extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 			IOException {
-		// TODO Auto-generated method stub
 	}
 
 }
