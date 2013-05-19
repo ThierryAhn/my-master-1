@@ -88,8 +88,10 @@
 							<br /> 
 							<input class="button" type="submit"
 								value="search" />
+							<br/>
 						</form>
 					</div>
+					<br/>
 					<div class="pagination woo-pagination"></div>
 				</div>
 			</div>
