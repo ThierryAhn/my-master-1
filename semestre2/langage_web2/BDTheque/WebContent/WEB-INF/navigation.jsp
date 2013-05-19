@@ -17,7 +17,7 @@
 	</ul>
 	<div id="search">
 		<form method="post" action="Search">
-			<input id="recherche" class="text" maxlength="64" size="27" name="Titre"/> 
+			<input id="recherche" class="text" maxlength="64" size="27" name="Titre" autocomplete="off"/> 
 			<input class="button" type="submit" value="Chercher"/>
 		</form>
 	</div>
