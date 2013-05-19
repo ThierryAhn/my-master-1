@@ -30,6 +30,7 @@
 		<!-- Contenu de la page -->
 		<div id="content" class="col-full">
 			<div id="main-sidebar-container">
+			<div id="resultat"></div>
 				<div id="main" class="col-left">
 					<div class="fix"></div>
 					<c:choose>
