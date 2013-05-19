@@ -94,8 +94,8 @@
 							<ul>
 								<li>
 									<div>
-										<h3>Aucun resulat</h3>
-										
+										<h3 style="margin-left:10px;">Aucun resulat</h3>
+										<br/>
 									</div>
 								</li>
 							</ul>
