@@ -48,46 +48,49 @@
 						<h1>Recherche Avancée :</h1>
 						<br />
 						<form method="post" action="Search" id="f">
+							
 							<label for="titreBd">Titre </label> 
-							<input type="text"
-								id="titreBd" name="Titre" value="" size="30" maxlength="30" />
+							<input type="text" id="titreBd" name="Titre" value="" size="30" maxlength="30" />
 							<br /> 
+							
 							<label for="serieBd">Serie </label> 
-							<input type="text"
-								id="serieBd" name="Serie" value="" size="30" maxlength="30" />
+							<input type="text" id="serieBd" name="Serie" value="" size="30" maxlength="30" />
 							<br /> 
+							
 							<label for="scenarioBd" >Scenario</label> 
-							<input
-								type="text" id="scenarioBd" name="Scenario" value="" size="30"
+							<input type="text" id="scenarioBd" name="Scenario" value="" size="30"
 								maxlength="30" /> 
-							<input class="button" type="button"
-								onclick="scenario()" name="ajouterScenario" value="+" id="scen" />
+							
+							<input class="button" type="button" onclick="scenario()" name="ajouterScenario" 
+								value="+" id="scen" />
 							<br /> <label for="dessinBd" >Dessin </label> 
-							<input type="text"
-								id="dessinBd" name="Dessin" value="" size="30" maxlength="30" />
-							<input class="button" type="button" onclick="dessin()"
-								name="ajouterDessin" value="+" id="dess"/> 
+							
+							<input type="text" id="dessinBd" name="Dessin" value="" size="30" maxlength="30" />
+							
+							<input class="button" type="button" onclick="dessin()" name="ajouterDessin" value="+" 
+								id="dess"/> 
 							<br /> 
-							<label
-								for="couleursBd" >Couleurs </label>
-							<input type="text"
-								id="couleursBd" name="couleursBd" value="" size="30"
+							
+							<label for="couleursBd" >Couleurs </label>
+							<input type="text" id="couleursBd" name="couleursBd" value="" size="30"
 								maxlength="30" /> 
-							<input class="button" type="button"
-								onclick="color()" name="ajouterCouleur" value="+" id="col"/> 
+							
+							<input class="button" type="button" onclick="color()" name="ajouterCouleur" value="+" 
+								id="col"/> 
 							<br />
+							
 							<label for="editeurBd" >Editeur</label> 
-						  <input type="text"
-								id="editeurBd" name="Editeur" value="" size="30" maxlength="30" />
-							<input class="button" type="button" onclick="editeur()"
-								name="ajoutEditeur" value="+" id="editor"/> 
+						  	<input type="text" id="editeurBd" name="Editeur" value="" size="30" maxlength="30" />
+							
+							<input class="button" type="button" onclick="editeur()" name="ajoutEditeur" value="+" 
+								id="editor"/> 
 							<br /> 
+							
 							<label for="isbnBd">ISBN</label>
-							<input type="text" id="isbnBd" name="ISBN" value="" size="30"
-								maxlength="30"  /> 
+							<input type="text" id="isbnBd" name="ISBN" value="" size="30" maxlength="30"  /> 
 							<br /> 
-							<input class="button" type="submit"
-								value="search" />
+							
+							<input class="button" type="submit" value="search" />
 							<br/>
 						</form>
 					</div>
