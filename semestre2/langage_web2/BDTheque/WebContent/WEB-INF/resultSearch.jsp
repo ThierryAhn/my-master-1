@@ -34,8 +34,8 @@
 				<div id="main" class="col-left">
 					<div class="fix"></div>
 					<c:choose>
-						<c:when test="${fn:length(resultat.bd)>0}">
-							<c:forEach var="bd" items="${resultat.bd}">
+						<c:when test="${fn:length(bds)>0}">
+							<c:forEach var="bd" items="${bds}" begin="0" end="${noOfRecords}">
 								<div
 									class="post-17396 post type-post status-publish format-standard hentry">
 									<c:out value="" />
@@ -103,8 +103,13 @@
 					</c:choose>
 					<div class="fix"></div>
 					<span class="fbreplace"> </span>
-					<div class="pagination woo-pagination"></div>
+					
+					<div class="pagination woo-pagination">
+							<!-- Pagination -->
+							<%@ include file="pagination2.jsp"%>
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
