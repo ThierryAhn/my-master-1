@@ -35,8 +35,6 @@
 			<!-- boite modale pour ajouter une bd -->
 			<%@ include file="addNewBd.jsp"%>
 			
-			<!-- boite modale pour uploader une bd -->
-			<%@ include file="uploadBd.jsp"%>
 		
 			<!-- Contenu de la page -->
 			<div id="content" class="col-full">
