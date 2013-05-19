@@ -84,7 +84,8 @@ public class AddNewBd extends HttpServlet {
         Bds.Bd.Informations informations = new Bds.Bd.Informations();
         informations.setTitre(titre);
         informations.setSerie(serie);
-        informations.setIdentifiant(bdss.getBd().size() + 1);
+        int lastId = bdss.getBd().get(bdss.getBd().size()-1).getInformations().getIdentifiant();
+        informations.setIdentifiant(lastId + 1);
         informations.setScenario(scenario);
         informations.setDessin(dessin);
         informations.setCouleurs(couleurs);
