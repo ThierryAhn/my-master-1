@@ -47,7 +47,8 @@
 									</a>
 									<!-- Titre dans le coin a gauche -->
 									<h2 class="title">
-										<a href="#" rel="bookmark" title="${bd.informations.titre}">
+										<a href="BD?Identifiant=${bd.informations.identifiant}" 
+										rel="bookmark" title="${bd.informations.titre}">
 											${bd.informations.titre} </a>
 									</h2>
 									<div class="post-meta"></div>
@@ -85,8 +86,6 @@
 											</tr>
 										</table>
 									</div>
-									<!-- Actions Bd : supprimer, modifier, export -->
-									<%@ include file="actions.jsp"%>
 								</div>
 							</c:forEach>
 						</c:when>
