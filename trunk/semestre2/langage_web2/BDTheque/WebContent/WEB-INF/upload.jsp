@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -25,40 +25,38 @@
 </head>
 
 <body class="two-col-left width-940"
-    style="-moz-user-select: none; cursor: default;">
-    <div id="wrapper">
+	style="-moz-user-select: none; cursor: default;">
+	<div id="wrapper">
 
-        <!-- header -->
-        <%@ include file="header.jsp"%>
+		<!-- header -->
+		<%@ include file="header.jsp"%>
 
-        <!-- menu -->
-        <%@ include file="navigation.jsp"%>
+		<!-- menu -->
+		<%@ include file="navigation.jsp"%>
 
-        <!-- boite modale pour ajouter une bd -->
-        <%@ include file="addNewBd.jsp"%>
+		<!-- boite modale pour ajouter une bd -->
+		<%@ include file="addNewBd.jsp"%>
 
-        <!-- Contenu de la page -->
-        <div id="content" class="col-full">
-            <div id="main-sidebar-container">
-                <div id="main" class="col-left">
-                    <div class="fix"></div>
+		<!-- Contenu de la page -->
+		<div id="content" class="col-full">
+			<div id="main-sidebar-container">
+				<div id="resultat"></div>
+				<div id="main" class="col-left">
+					<div class="fix"></div>
 
-                    <div id="advancedSearch">
-                        <h1>Upload fichier Xml :</h1>
-                        <br />
-                        <form action="Upload" method="post" enctype="multipart/form-data">
-                            <label for="fichier">Fichier </label> 
-                            <input  type="file"
-                                name="fichier"/>
-                            <br/>
-                            <input class="button" type="submit"
-                                value="upload" />
-                        </form>
-                    </div>
-                    <div class="pagination woo-pagination"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<div id="advancedSearch">
+						<h1>Upload fichier Xml :</h1>
+						<br />
+						<form action="Upload" method="post" enctype="multipart/form-data">
+							<label for="fichier">Fichier </label> <input type="file"
+								name="fichier" /> <br /> <input class="button" type="submit"
+								value="upload" />
+						</form>
+					</div>
+					<div class="pagination woo-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
