@@ -32,59 +32,74 @@
 			<div id="main-sidebar-container">
 				<div id="main" class="col-left">
 					<div class="fix"></div>
-					<c:forEach var="bd" items="${resultat.bd}">
-						<div
-							class="post-17396 post type-post status-publish format-standard hentry">
-							<c:out value="" />
-							<!-- Image bd -->
-							<a title="${bd.informations.titre}" href="#"> <img
-								src="${bd.image.value}" alt="${bd.informations.titre}"
-								class="woo-image thumbnail alignright" width="100" height="155" />
-							</a>
-							<!-- Titre dans le coin a gauche -->
-							<h2 class="title">
-								<a href="#" rel="bookmark" title="${bd.informations.titre}">
-									${bd.informations.titre} </a>
-							</h2>
-							<div class="post-meta"></div>
-							<!-- Informations bd -->
-							<div class="entry">
-								<table>
-									<tr>
-										<td>Titre :</td>
-										<td><c:out value="${bd.informations.titre}" /></td>
-									</tr>
-									<tr>
-										<td>Serie :</td>
-										<td><c:out value="${bd.informations.serie}" /></td>
-									</tr>
-									<tr>
-										<td>Scenario :</td>
-										<td><c:out value="${bd.informations.scenario}" /></td>
-									</tr>
-									<tr>
-										<td>Dessin :</td>
-										<td><c:out value="${bd.informations.dessin}" /></td>
-									</tr>
+					<c:choose>
+						<c:when test="${fn:length(resultat.bd)>0}">
+							<c:forEach var="bd" items="${resultat.bd}">
+								<div
+									class="post-17396 post type-post status-publish format-standard hentry">
+									<c:out value="" />
+									<!-- Image bd -->
+									<a title="${bd.informations.titre}" href="#"> <img
+										src="${bd.image.value}" alt="${bd.informations.titre}"
+										class="woo-image thumbnail alignright" width="100"
+										height="155" />
+									</a>
+									<!-- Titre dans le coin a gauche -->
+									<h2 class="title">
+										<a href="#" rel="bookmark" title="${bd.informations.titre}">
+											${bd.informations.titre} </a>
+									</h2>
+									<div class="post-meta"></div>
+									<!-- Informations bd -->
+									<div class="entry">
+										<table>
+											<tr>
+												<td>Titre :</td>
+												<td><c:out value="${bd.informations.titre}" /></td>
+											</tr>
+											<tr>
+												<td>Serie :</td>
+												<td><c:out value="${bd.informations.serie}" /></td>
+											</tr>
+											<tr>
+												<td>Scenario :</td>
+												<td><c:out value="${bd.informations.scenario}" /></td>
+											</tr>
+											<tr>
+												<td>Dessin :</td>
+												<td><c:out value="${bd.informations.dessin}" /></td>
+											</tr>
 
-									<tr>
-										<td>Couleurs :</td>
-										<td><c:out value="${bd.informations.couleurs}" /></td>
-									</tr>
-									<tr>
-										<td>Editeur :</td>
-										<td><c:out value="${bd.informations.editeur}" /></td>
-									</tr>
-									<tr>
-										<td>ISBN :</td>
-										<td><c:out value="${bd.informations.ISBN}" /></td>
-									</tr>
-								</table>
-							</div>
-							<!-- Actions Bd : supprimer, modifier, export -->
-							<%@ include file="actions.jsp"%>
-						</div>
-					</c:forEach>
+											<tr>
+												<td>Couleurs :</td>
+												<td><c:out value="${bd.informations.couleurs}" /></td>
+											</tr>
+											<tr>
+												<td>Editeur :</td>
+												<td><c:out value="${bd.informations.editeur}" /></td>
+											</tr>
+											<tr>
+												<td>ISBN :</td>
+												<td><c:out value="${bd.informations.ISBN}" /></td>
+											</tr>
+										</table>
+									</div>
+									<!-- Actions Bd : supprimer, modifier, export -->
+									<%@ include file="actions.jsp"%>
+								</div>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<ul>
+								<li>
+									<div>
+										<h3>Aucun resulat</h3>
+										
+									</div>
+								</li>
+							</ul>
+						</c:otherwise>
+					</c:choose>
 					<div class="fix"></div>
 					<span class="fbreplace"> </span>
 					<div class="pagination woo-pagination"></div>
