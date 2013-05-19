@@ -40,7 +40,7 @@
 		<br/>
 		
 		<label for="imageBd">Lien image </label>
-		<input type="text" id="imageBd" name="imageBd" value="" size="30" required/>
+		<input type="url" id="imageBd" name="imageBd" value="" size="30" required/>
 		<br/>
 		
 		<textarea id="descriptionBd" name="descriptionBd" rows="3" cols="47">Entrez votre description ici ...</textarea>
