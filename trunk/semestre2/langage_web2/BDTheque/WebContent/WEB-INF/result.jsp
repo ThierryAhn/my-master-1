@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<!-- resultat recherche live -->
 <c:choose>
 	<c:when test="${fn:length(resultat.bd)>0}">
 		<ul class="list">
