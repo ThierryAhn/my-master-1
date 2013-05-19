@@ -163,7 +163,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
     margin-bottom: 0;
 }
 
-#navigation ul.rss li {
+/* #navigation ul.rss li {
     display: inline;
     padding: 0 10px 0 0;
 }
@@ -175,7 +175,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 
 #navigation ul.rss li a:hover {
     text-decoration: underline;
-}
+}*/
 
 .nav {
     z-index: 99;
@@ -371,14 +371,14 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
     position: relative;
 }
 
-#logo {
+/* #logo {
     float: left;
 }
 
 #logo .site-description {
     color: #999;
     font: italic 14px Georgia, serif;
-}
+}*/
 
 #content {
     padding: 20px 0 10px 0;
@@ -433,7 +433,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
     width: 50%;
 }
 
-.discl {
+/* .discl {
     padding: 2px;
     background-color: #fff;
     margin: 0 0 3px 0;
@@ -467,7 +467,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
     font-size: 14px;
     text-decoration: none;
     line-height: 28px;
-}
+} */
 
 .post,.search .page {
     margin: 0 0 40px;
@@ -702,7 +702,7 @@ img.aligncenter {
     border: 1px solid #bbb;
 }
 
-.post {
+/*.post {
     position: relative;
 }
 
@@ -732,7 +732,7 @@ img.aligncenter {
 
 .post .audio {
     margin-bottom: 1.8em;
-}
+}*/
 
 #tabs {
     background: #e6e6e6;
@@ -840,7 +840,7 @@ h3#pings {
     margin: 25px 0 10px 0;
 }
 
-.pinglist li {
+/*.pinglist li {
     margin: 0 0 0 20px;
     list-style-type: decimal;
 }
@@ -857,7 +857,7 @@ h3#pings {
 .pinglist li .pingcontent {
     display: block;
     margin: 10px 0;
-}
+}*/
 
 .button,.button:visited,.reply a,#respond .form-submit input#submit {
     font-family: Verdana, Geneva, Arial, sans-serif;
@@ -916,7 +916,7 @@ h3#pings {
     opacity: 0.9;
 }
 
-.three-col-left #contact-page ol.forms textarea,.three-col-middle #contact-page ol.forms textarea,
+/*.three-col-left #contact-page ol.forms textarea,.three-col-middle #contact-page ol.forms textarea,
     .three-col-right #contact-page ol.forms textarea{
     width: 65%;
 }
@@ -924,9 +924,9 @@ h3#pings {
 .three-col-left #contact-page ol.forms input#sendCopy,.three-col-middle #contact-page ol.forms input#sendCopy,
     .three-col-right #contact-page ol.forms input#sendCopy{
     float: left;
-}
+}*/
 
-.gfield {
+/*.gfield {
     margin-bottom: 10px;
 }
 
@@ -975,12 +975,12 @@ ul.top_label .clear-multi {
 
 .gform_wrapper .gfield_checkbox,.gform_wrapper .gfield_radio {
     margin-left: 120px !important;
-}
+}*/
 
-img.ui-datepicker-trigger {
+/*img.ui-datepicker-trigger {
     border: 0px;
     padding: 0px;
-}
+}*/
 
 /* .entry .quote,.entry .video {
     margin-bottom: 1.5em;
@@ -1001,7 +1001,7 @@ img.ui-datepicker-trigger {
     content: '~ '
 } */
 
-.widget #connect {
+/*.widget #connect {
     background: none;
     padding: 0;
     border: none;
@@ -1009,9 +1009,9 @@ img.ui-datepicker-trigger {
 
 .widget #connect .fl,.widget #connect .fr {
     float: none;
-}
+}*/
 
-.woo-sc-featured-posts ul {
+/* .woo-sc-featured-posts ul {
     float: left;
     clear: both;
     list-style: none;
@@ -1032,9 +1032,9 @@ img.ui-datepicker-trigger {
 
 .woo-sc-featured-posts ul li .related-title {
     float: left;
-}
+}*/
 
-.width-1200 .col-full {
+/* .width-1200 .col-full {
     width: 1200px;
 }
 
@@ -1044,13 +1044,13 @@ img.ui-datepicker-trigger {
 
 .width-960 .col-full {
     width: 960px;
-}
+} */
 
 .width-940 .col-full {
     width: 940px;
 }
 
-.width-880 .col-full {
+/* .width-880 .col-full {
     width: 880px;
 }
 
@@ -1074,7 +1074,7 @@ img.ui-datepicker-trigger {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 .width-940 #wrapper {
     width: 940px;
@@ -1082,7 +1082,7 @@ img.ui-datepicker-trigger {
     margin-right: auto;
 }
 
-.width-880 #wrapper {
+/* .width-880 #wrapper {
     width: 880px;
     margin-left: auto;
     margin-right: auto;
@@ -1092,9 +1092,9 @@ img.ui-datepicker-trigger {
     width: 760px;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
-.width-1200 #footer-widgets .block {
+/*.width-1200 #footer-widgets .block {
     width: 275px
 }
 
@@ -1112,7 +1112,7 @@ img.ui-datepicker-trigger {
 
 .width-760 #footer-widgets .block {
     width: 165px
-}
+}*/
 
 .two-col-left #main-sidebar-container {
     display: inline;
@@ -1147,7 +1147,7 @@ img.ui-datepicker-trigger {
     padding: 5px 20px;
 }
 
-div#captchaImgDiv {
+/*div#captchaImgDiv {
     display: block;
 }
 
@@ -1159,7 +1159,7 @@ div#captchaImgDiv {
 .captchaSizeDivLarge {
     width: 250px;
     height: 60px;
-}
+}*/
 
 img#si_image_com,#si_image_reg,#si_image_log,#si_image_side_login {
     border-style: none;
@@ -1168,7 +1168,7 @@ img#si_image_com,#si_image_reg,#si_image_log,#si_image_side_login {
     float: left;
 }
 
-.captchaImgRefresh {
+/*.captchaImgRefresh {
     border-style: none;
     margin: 0;
     vertical-align: bottom;
@@ -1200,7 +1200,7 @@ input#captcha_code {
     border: 0 solid #fff;
     padding: 0;
     margin: 0;
-}
+}*/
 
 a:hover,.post-more a:hover,.post-meta a:hover,.post p.tags a:hover {
     color: #E3051C
@@ -1216,7 +1216,7 @@ a:hover,.post-more a:hover,.post-meta a:hover,.post p.tags a:hover {
     border: 0px solid;
 }
 
-#logo {
+/*#logo {
     padding-left: 1px;
 }
 
@@ -1232,7 +1232,7 @@ a:hover,.post-more a:hover,.post-meta a:hover,.post p.tags a:hover {
 #logo .site-description {
     font: italic 20px/1em Georgia, serif;
     color: #999999;
-}
+}*/
 
 #wrapper {
     padding-left: 20px;
@@ -1305,11 +1305,11 @@ h6 {
     border-bottom: 0px solid #e6e6e6;
 }
 
-#post-author,#connect {
+/* #post-author,#connect {
     border-top: 0px solid #e6e6e6;
     border-bottom: 0px solid #e6e6e6;
     background-color: #fafafa
-}
+}*/
 
 .nav-entries,.wp-pagenavi,.woo-pagination {
     background-color: #191919;
@@ -1329,7 +1329,7 @@ h6 {
     color: #000000 !important
 }
 
-.widget h3 {
+/*.widget h3 {
     font: bold 12px/1.5em Arial, sans-serif;
     color: #666666;
     border-bottom: 1px solid #e6e6e6;
@@ -1353,7 +1353,7 @@ h6 {
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-}
+}*/
 
 #tabs {
     border: 1px solid #DFDFDF;
