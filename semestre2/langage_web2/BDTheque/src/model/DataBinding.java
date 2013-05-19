@@ -1,6 +1,4 @@
 package model;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
@@ -18,12 +16,17 @@ import util.Bds.Bd;
 import util.ObjectFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+/**
+ * Classe DataBinding pour serialiser et deserialiser les bd.
+ * @author AHOUNOU & ABALINE
+ *
+ */
 public class DataBinding {
 
 	/**
 	 * Retourne une instance de bds deserialisée depuis la ressource xml.
-	 * @param res
-	 * @return
+	 * @param res ressource xml.
+	 * @return une instance de bds.
 	 * @throws XMLDBException
 	 */
 	public static Bds deserialise(XMLResource res) throws XMLDBException{
@@ -45,9 +48,9 @@ public class DataBinding {
 	}
 	
 	/**
-	 * 
-	 * @param xml
-	 * @return
+	 * Retourne une instance de bds depuis un fichier xml.
+	 * @param xml fichier xml.
+	 * @return une instance de bds.
 	 * @throws XMLDBException
 	 * @throws IOException 
 	 * @throws SAXException 
@@ -70,43 +73,6 @@ public class DataBinding {
 		}
 		return null;
 	}
-
-	/**
-	 * Permet serialisé une instance de Bds sous format xml
-	 * @param bds
-	 */
-	public static void serialise(Bds bds){
-		try {
-			JAXBContext context = JAXBContext.newInstance(Bds.class);
-			Marshaller m = context.createMarshaller();
-			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-			m.marshal(bds, new File("src/data/BDcreated.xml"));
-		} catch (JAXBException ex) {
-			ex.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Serialise une liste de bd au format string.
-	 * @param bds liste de bd a serialise.
-	 * @return une liste de bd serialise au format string.
-	 */
-	public static String serialisetoString(Bds bds) {
-		StringWriter sw = new StringWriter();	
-		try {
-			JAXBContext context = JAXBContext.newInstance(Bds.class);
-			Marshaller m = context.createMarshaller();
-			
-			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			
-			m.marshal(bds, sw);
-
-		} catch (JAXBException ex) {
-			ex.printStackTrace();
-		}
-		return sw.toString();
-	}
 	
 	/**
 	 * Serialise un bd au format string.
@@ -121,9 +87,6 @@ public class DataBinding {
 			
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, false);
 			m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-			
-			//String schemaLocation ="xsi:schemaLocation=http://www.univ-rouen.fr/bd ../xsd/BD.xsd";
-			//m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,schemaLocation);
 			
 			m.marshal(bd, sw);
 
