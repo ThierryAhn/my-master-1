@@ -1,3 +1,4 @@
+<script type='text/javascript' src='js/jquery/search.js'></script>
 <div id="navigation" class="col-full">
 	<ul id="main-nav" class="nav fl">
 		<li><a href="Index">Accueil</a></li>
@@ -16,7 +17,7 @@
 	</ul>
 	<div id="search">
 		<form method="post" action="">
-			<input class="text" maxlength="64" size="27" name="search"/> 
+			<input id="recherche" class="text" maxlength="64" size="27" name="search"/> 
 			<input class="button" type="submit" value="Chercher"/>
 		</form>
 	</div>
