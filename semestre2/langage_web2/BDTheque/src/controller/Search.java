@@ -33,6 +33,7 @@ public class Search extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// affichage de page de page de recherche avancée si null
 		if(request.getParameter("page") == null){	
 			try {
 				xquery = new Xquery();
@@ -44,7 +45,7 @@ public class Search extends HttpServlet {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/search.jsp");
 			//envoie a la jsp
 			dispatcher.include(request, response);
-		}else{
+		}else{ // sinon navigation avec la pagination
 			System.out.println("result " +resultat);
 			System.out.println("taille : "+resultat.getBd().size());
 
