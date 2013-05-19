@@ -2,11 +2,8 @@ package controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -17,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.transform.TransformerException;
 
 import org.apache.fop.apps.FOPException;
-import org.xmldb.api.base.XMLDBException;
-import org.xmldb.api.modules.XMLResource;
 
 import model.DataBinding;
 import model.Xquery;
@@ -48,16 +43,17 @@ public class BD extends HttpServlet {
 			IOException {
 		int identifiant = Integer.parseInt(request.getParameter("Identifiant"));
 		
+		// recuperation de la liste des bd sur exists
 		xquery = null;
 		Bds bds = null;
 		try {
 			xquery = new Xquery();
 			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		// recuperation de la bd sur lequel on a clique pour l'afficher avec toutes ses infos
 		Bds.Bd bd = null;
 		for(Bds.Bd temp : bds.getBd()){
 			if(temp.getInformations().getIdentifiant() == identifiant){
@@ -92,6 +88,7 @@ public class BD extends HttpServlet {
 		
 		// si clic sur bouton supprimer
 		if(actionButton.equals("Supprimer")){
+			// suppression de la bd sur exists
 			try {
 				xquery = new Xquery();
 				xquery.delete(identifiant);
@@ -100,18 +97,14 @@ public class BD extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			
+			// pagination
 			int count = 2;
-	        
 	        if(count > bdss.getBd().size())
 	        	count = bdss.getBd().size();
-			
-			// injection des bean
 			List<Bds.Bd> bds = bdss.getBd().subList(0, count);
 	        
 	        int page = 1;
 	        int recordsPerPage = 2;
-	        
 	        int noOfRecords = bdss.getBd().size();
 			int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
 			
@@ -131,16 +124,17 @@ public class BD extends HttpServlet {
 			
 			RequestDispatcher dispatcher = null;
 			
+			// recuperation de la liste des bd sur exists
 			xquery = null;
 			Bds bds = null;
 			try {
 				xquery = new Xquery();
 				bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
+			// recuperation bd a exporter
 			Bds.Bd bd = null;
 			for(Bds.Bd temp : bds.getBd()){
 				if(temp.getInformations().getIdentifiant() == identifiant){
@@ -205,9 +199,7 @@ public class BD extends HttpServlet {
 			
 			request.setAttribute("bd", bd);
 			
-			
-			
-	     	//envoie a la jsp
+			//envoie a la jsp
 	     	dispatcher.include(request, response);
 		}
 		

@@ -30,7 +30,6 @@ public class AddNewBd extends HttpServlet {
      */
     public AddNewBd() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -57,7 +56,6 @@ public class AddNewBd extends HttpServlet {
 		
 		// date courante
 		DateTime dateTime = new DateTime();
-		
 		XMLGregorianCalendar xgcal = null;
 		try {
 			xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
@@ -68,6 +66,7 @@ public class AddNewBd extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
+		// va permettre de recuperer le dernier identifiant utilise
 		Xquery xquery = null;
 		Bds bdss = null;
 		try {
@@ -80,7 +79,7 @@ public class AddNewBd extends HttpServlet {
         // creation du bean bd
         Bds.Bd bd = new Bds.Bd();
         
-        // infos bd
+        // modifications infos bd
         Bds.Bd.Informations informations = new Bds.Bd.Informations();
         informations.setTitre(titre);
         informations.setSerie(serie);
@@ -110,22 +109,20 @@ public class AddNewBd extends HttpServlet {
         try {
 			xquery.insert(bd);
 			xquery = new Xquery();
+			// recuperation de la nouvelle liste de bd après insertion
 			bdss = DataBinding.deserialise(xquery.getResource("BD.xml"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
+        // pagination
         int count = 2;
-        
         if(count > bdss.getBd().size())
         	count = bdss.getBd().size();
         
         List<Bds.Bd> bds = bdss.getBd().subList(0, count);
-        
         int page = 1;
         int recordsPerPage = 2;
-        
         int noOfRecords = bdss.getBd().size();
 		int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
 		

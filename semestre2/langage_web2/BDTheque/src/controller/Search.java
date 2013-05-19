@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import javax.servlet.RequestDispatcher;
@@ -49,6 +48,10 @@ public class Search extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/* application de getter en fonction du nom de l'input.
+		 * par exemple si l'utilisateur remplit le champ titre, on va donc appliquer getTitre() sur les
+		 * bd.
+		 */
 		Bds resultat = new Bds();
 		Method[] allmethode = Bd.Informations.class.getDeclaredMethods();
 		for(Bd bd : bds.getBd()){
