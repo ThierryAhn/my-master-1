@@ -18,7 +18,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Classe DataBinding pour serialiser et deserialiser les bd.
- * @author AHOUNOU & ABALINE
+ * @author AHOUNOU Folabi Thierry & ABALINE Rachid.
  *
  */
 public class DataBinding {
