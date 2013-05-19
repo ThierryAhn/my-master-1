@@ -9,7 +9,7 @@
 				<style type="text/css">
 					
 					/* image de la BD */
-					.center img{
+					#center img{
 						float : left;
 						height : 316px;
 						width : 230px;
@@ -17,7 +17,7 @@
 					}
 					
 					/* description */
-					p.center{
+					p#description{
 						width : 800px;
 						text-align : justify;
 					}
@@ -32,7 +32,7 @@
 						min-height : 400px;
 					}
 					
-					div.content{
+					div#content{
 						text-align : center;
 					}
 					
@@ -41,11 +41,11 @@
 
 			<body>
 				
-				<div class="content">
+				<div id="content">
 					<h1>Bedetheque - M1GIL</h1>
 					
 					<!-- Affichage de l'image de la BD -->
-					<div class="center">
+					<div id="center">
 						<xsl:element name="img">
 							<xsl:attribute name="src">
 								<xsl:value-of select="bds:Image" />
@@ -151,7 +151,7 @@
 					
 					<!-- Description de la BD -->
 					<div >
-						<p class="center">
+						<p id="description">
 							<b>Résumé de la série : </b>
 							<xsl:value-of select="bds:Description" />
 						</p>
