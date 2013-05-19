@@ -48,6 +48,12 @@ public class Search extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			xquery = new Xquery();
+			bds = DataBinding.deserialise(xquery.getResource("BD.xml"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		/* application de getter en fonction du nom de l'input.
 		 * par exemple si l'utilisateur remplit le champ titre, on va donc appliquer getTitre() sur les
 		 * bd.
