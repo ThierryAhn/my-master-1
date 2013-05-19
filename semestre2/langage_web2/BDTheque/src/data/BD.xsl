@@ -34,8 +34,6 @@
 					
 					div.content{
 						text-align : center;
-						display:inline-block;
-  vertical-align:middle;
 					}
 					
 				</style>
