@@ -85,7 +85,12 @@ public class ConvertToPdf {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * 
+	 * @param streamSource
+	 * @return
+	 */
 	private Transformer getTransformer(StreamSource streamSource){
 		// mise en place xslt transformer
 		TransformerFactory impl = TransformerFactory.newInstance();
